@@ -1,4 +1,4 @@
-# 🎯 Đề tài: Thiết kế website tìm hiểu sự kiện và địa điểm nổi bật
+# 🎯 Đề tài: Thiết kế website tìm hiểu sự kiện
 
 **Lớp học phần:** Thiết kế web - Thứ 3 ca 4  
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 📁 Cấu trúc các trang chính (Sitemap)
+## 📁 Cấu trúc các trang chính
 
 - Trang chủ
 - Danh sách các thành phố
@@ -33,7 +33,7 @@
 
 ---
 
-## 🧭 Luồng người dùng (User Flow)
+## 🧭 Luồng người dùng 
 
 1. Người dùng truy cập trang chủ  
 2. Chọn thành phố muốn khám phá  
@@ -47,7 +47,7 @@
 ## 🧰 Công nghệ sử dụng
 
 - HTML, CSS, JavaScript
-- Hình ảnh thành phố và sự kiện từ nguồn online (Unsplash, v.v.)
+- Hình ảnh thành phố và sự kiện từ nguồn online
 - Mô hình website tĩnh dễ triển khai và mở rộng sau
 
 ---
@@ -56,7 +56,8 @@
 
 - [Background_Du lịch](https://vietnam.travel/)
 - [Chi tiết sự kiện](https://www.ivivu.com/du-lich/tour-mua-he-nhat-ban-5n4d-ha-noi-tokyo-nui-phu-si-ho-kawaguchiko-vinh-odaiba/5058)
-- [Backgroung_Liên hệ](https://chammuseum.danang.vn/lien-he/)
+- [Background_Liên hệ](https://chammuseum.danang.vn/lien-he/)
+- [List_Sự kiện](https://sansukien.com/)
 
 ---
 
