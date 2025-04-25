@@ -17,7 +17,7 @@
 <div class="navbar_1">
   <nav>
     <div class="navbar-inner">
-      <a class="welcome-text" href="#">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+      <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
       <div class="contact">
         <div class="contact-item">📞 0123 456 789</div>
         <a class="contact-item zalo" href="#" style="color: black;">Chat Zalo</a>
@@ -25,50 +25,133 @@
     </div>
   </nav>
 </div>
-
 <!-- Header Section -->
 <div class="navigation">
-  <header>
-      <h1 id="logo_main">
+  <header class="main-header">
+      <div class="logo">
           <a href="index.html">
-              <img src="images/LOGO_main.png" alt="EventVista" class="logo">
+              <img src="images/LOGO_main.png" alt="EventVista">
           </a>
-      </h1>
-      <div class="header-actions">
-          <nav class="main-nav">
-              <a href="index.html">TRANG CHỦ</a>
-              <a href="#">THÀNH PHỐ</a>
-              <a href="#">SỰ KIỆN NỔI BẬT</a>
-              <a href="#">ĐẶT VÉ</a>
-              <a href="#">LIÊN HỆ</a>
-          </nav>
+      </div>
+      <nav class="main-nav">
+          <a href="index.html">TRANG CHỦ</a>
+          <div class="city-dropdown-wrapper">
+            <a class="nav-link fw-semibold dropdown-toggle" href="#">THÀNH PHỐ</a>
+            <ul class="dropdown-menu multi-column-dropdown" aria-labelledby="cityDropdownMenuButton">
+              <li>
+                  <div class="column">
+                      <h3>Miền Bắc</h3>
+                      <a class="dropdown-item" href="#">Hà Nội</a>
+                      <a class="dropdown-item" href="#">Hạ Long</a>
+                      <a class="dropdown-item" href="#">Sapa</a>
+                      <a class="dropdown-item" href="#">Ninh Bình</a>
+                      <a class="dropdown-item" href="#">Mai Châu</a>
+                  </div>
+              </li>
+              <li>
+                  <div class="column">
+                      <h3>Miền Trung</h3>
+                      <a class="dropdown-item" href="#">Đà Nẵng</a>
+                      <a class="dropdown-item" href="#">Huế</a>
+                      <a class="dropdown-item" href="#">Hội An</a>
+                      <a class="dropdown-item" href="#">Nha Trang</a>
+                      <a class="dropdown-item" href="#">Đà Lạt</a>
+                      <a class="dropdown-item" href="#">Phong Nha</a>
+                  </div>
+              </li>
+              <li>
+                  <div class="column">
+                      <h3>Miền Nam</h3>
+                      <a class="dropdown-item" href="#">Hồ Chí Minh</a>
+                      <a class="dropdown-item" href="#">Cần Thơ</a>
+                      <a class="dropdown-item" href="#">Vũng Tàu</a>
+                      <a class="dropdown-item" href="#">Phú Quốc</a>
+                      <a class="dropdown-item" href="#">Mỹ Tho</a>
+                      <a class="dropdown-item" href="#">Đồng Tháp</a>
+                  </div>
+              </li>
+          </ul>
+        </div>
+          <a href="#">SỰ KIỆN NỔI BẬT</a>
+          <a href="#">ĐẶT VÉ</a>
+          <a href="#">LIÊN HỆ</a>
+      </nav>
+      <div class="user-actions">
+        <div class="user_bar">
           <div class="user-links">
-              <a href="#">Vé đã đặt</a>
-              <span class="separator">|</span>
-              <a href="#">Đăng ký</a>
-              <span class="separator">|</span>
-              <a href="#">Đăng nhập</a>
+            <ul class="nav navbar_nav">
+              <li id="login" class="log_action">
+                <a href="#">Đăng nhập</a>
+              </li>
+              <span>|</span>
+              <li id="register" class="log_action">
+                <a href="#">Đăng ký</a>
+              </li>
+            </ul>
           </div>
+        </div>
+      </div>
+      <div class="user-icon">
+           <i class="fa fa-user"></i>
       </div>
   </header>
 </div>
-</div>
-<div class="header_sub_container">
-  <nav class="header_sub">
-    <ul class="header_sub type">
-      <li><a href="#">Ca nhạc</a></li>
-      <li><a href="#">Văn hóa - Nghệ  thuật</a></li>
-      <li><a href="#">Workshop</a></li>
-      <li><a href="#">Thể thao</a></li>
-      <li><a href="#">Khác</a></li>
+<div class="category-search-bar">
+<div class="container d-flex justify-content-between align-items-center">
+  <button class="hamburger-menu-toggle">
+    <i class="fas fa-bars fa-lg"></i>
+  </button>
+    <ul class="category-list d-flex align-items-center">
+        <li class="category-item">
+            <div class="category-icon">
+                <i class="fas fa-music fa-lg"></i>
+            </div>
+            <a href="#" class="category-link">Ca nhạc</a>
+        </li>
+        <li class="category-item">
+            <div class="category-icon">
+                <i class="fas fa-palette fa-lg"></i>
+            </div>
+            <a href="#" class="category-link">Văn hóa - Nghệ thuật</a>
+        </li>
+        <li class="category-item">
+            <div class="category-icon">
+                <i class="fas fa-tools fa-lg"></i>
+            </div>
+            <a href="#" class="category-link">Workshop</a>
+        </li>
+        <li class="category-item">
+            <div class="category-icon">
+                <i class="fas fa-futbol fa-lg"></i>
+            </div>
+            <a href="#" class="category-link">Thể thao</a>
+        </li>
+        <li class="category-item">
+            <div class="category-icon">
+                <i class="fas fa-newspaper fa-lg"></i>
+            </div>
+            <a href="#" class="category-link">Tin tức</a>
+        </li>
+        <li class="category-item">
+            <div class="category-icon">
+                <i class="fas fa-ellipsis-h fa-lg"></i>
+            </div>
+            <a href="#" class="category-link">Khác</a>
+        </li>
     </ul>
-    <form class="search-form" action="#" method="get">
-      <input type="text" name="q" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
-      <button type="submit">🔍</button>
+    <form class="search-form" id="searchForm">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Tìm kiếm sự kiện..." aria-label="Search" id="searchInput">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
     </form>
-  </nav>
+    <button class="search-toggle-btn">
+        <i class="fa fa-search"></i>
+    </button>
 </div>
-
+</div>
 <main>
   <div class="hn"><div class="image-container">
         <h2 class="overlay-text">Hà Nội</h2>
