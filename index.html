@@ -4,15 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang chủ - Tìm kiếm sự kiện</title>
-  <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/products/home_products.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
   <!-- Welcome Section -->
   <div class="navbar_1">
     <nav>
       <div class="navbar-inner">
-        <a class="welcome-text" href="#">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+        <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
         <div class="contact">
           <div class="contact-item">📞 0123 456 789</div>
           <a class="contact-item zalo" href="#" style="color: black;">Chat Zalo</a>
@@ -23,52 +31,298 @@
 
   <!-- Header Section -->
   <div class="navigation">
-    <header>
-        <h1 id="logo_main">
+    <header class="main-header">
+        <div class="logo">
             <a href="index.html">
-                <img src="images/LOGO_main.png" alt="EventVista" class="logo">
+                <img src="images/LOGO_main.png" alt="EventVista">
             </a>
-        </h1>
-        <div class="header-actions">
-            <nav class="main-nav">
-                <a href="index.html">TRANG CHỦ</a>
-                <a href="#">THÀNH PHỐ</a>
-                <a href="#">SỰ KIỆN NỔI BẬT</a>
-                <a href="#">ĐẶT VÉ</a>
-                <a href="#">LIÊN HỆ</a>
-            </nav>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">TRANG CHỦ</a>
+            <a href="#"> THÀNH PHỐ </a>
+            <a href="#">SỰ KIỆN NỔI BẬT</a>
+            <a href="#">ĐẶT VÉ</a>
+            <a href="#">LIÊN HỆ</a>
+        </nav>
+        <div class="user-actions">
+          <div class="user_bar">
             <div class="user-links">
-                <a href="#">Vé đã đặt</a>
-                <span class="separator">|</span>
-                <a href="#">Đăng ký</a>
-                <span class="separator">|</span>
-                <a href="#">Đăng nhập</a>
+              <ul class="nav navbar_nav">
+                <li id="login" class="log_action">
+                  <a href="#">Đăng nhập</a>
+                </li>
+                <span>|</span>
+                <li id="register" class="log_action">
+                  <a href="#">Đăng ký</a>
+                </li>
+              </ul>
             </div>
+          </div>
+        </div>
+        <div class="user-icon">
+             <i class="fa fa-user"></i>
         </div>
     </header>
 </div>
-  </div>
-  <div class="header_sub_container">
-    <nav class="header_sub">
-      <ul class="header_sub type">
-        <li><a href="#">Ca nhạc</a></li>
-        <li><a href="#">Văn hóa - Nghệ  thuật</a></li>
-        <li><a href="#">Workshop</a></li>
-        <li><a href="#">Thể thao</a></li>
-        <li><a href="#">Khác</a></li>
+<div class="category-search-bar">
+  <div class="container d-flex justify-content-between align-items-center">
+    <button class="hamburger-menu-toggle">
+      <i class="fas fa-bars fa-lg"></i>
+    </button>
+      <ul class="category-list d-flex align-items-center">
+          <li class="category-item">
+              <div class="category-icon">
+                  <i class="fas fa-music fa-lg"></i>
+              </div>
+              <a href="#" class="category-link">Ca nhạc</a>
+          </li>
+          <li class="category-item">
+              <div class="category-icon">
+                  <i class="fas fa-palette fa-lg"></i>
+              </div>
+              <a href="#" class="category-link">Văn hóa - Nghệ thuật</a>
+          </li>
+          <li class="category-item">
+              <div class="category-icon">
+                  <i class="fas fa-tools fa-lg"></i>
+              </div>
+              <a href="#" class="category-link">Workshop</a>
+          </li>
+          <li class="category-item">
+              <div class="category-icon">
+                  <i class="fas fa-futbol fa-lg"></i>
+              </div>
+              <a href="#" class="category-link">Thể thao</a>
+          </li>
+          <li class="category-item">
+              <div class="category-icon">
+                  <i class="fas fa-newspaper fa-lg"></i>
+              </div>
+              <a href="#" class="category-link">Tin tức</a>
+          </li>
+          <li class="category-item">
+              <div class="category-icon">
+                  <i class="fas fa-ellipsis-h fa-lg"></i>
+              </div>
+              <a href="#" class="category-link">Khác</a>
+          </li>
       </ul>
-      <form class="search-form" action="#" method="get">
-        <input type="text" name="q" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
-        <button type="submit">🔍</button>
+      <form class="search-form" id="searchForm">
+          <div class="input-group">
+              <input type="text" class="form-control" placeholder="Tìm kiếm sự kiện..." aria-label="Search" id="searchInput">
+              <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+          </div>
       </form>
-    </nav>
+      <button class="search-toggle-btn">
+          <i class="fa fa-search"></i>
+      </button>
+  </div>
+</div>
+
+  <!-- Background Section -->
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/workshop/workshop1.png" alt="EventVista" width="1100" height="500">
+        <div class="carousel-caption">
+          <h2>CHÀO MỪNG BẠN ĐẾN VỚI EVENTVISTA</h2>
+          <p>Hãy khám phá và tham gia những sự kiện đặc biệt thú vị trên khắp cả nước!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/music/music2.png" alt="EventVista" width="1100" height="500">
+        <div class="carousel-caption">
+          <h2>SỰ KIỆN ĐỘC ĐÁO ĐANG CHỜ ĐÓN BẠN!</h2>
+          <p>Khám phá các sự kiện mới nhất, từ các buổi hòa nhạc đến hội nghị chuyên đề.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/culture/culture2.png" alt="EventVista" width="1100" height="500">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  
+  <!-- Sự kiện nổi bật -->
+  <div class="featured-events-header">
+    <h2>Sự Kiện Nổi Bật</h2>
+    <a href="#" class="view-more-header">Xem thêm <i class="fa fa-chevron-right"></i></a>
+  </div>
+  <div class="featured-events">
+    <div class="events-grid">
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/music/music1.png" alt="BOF DEBUT SHOWCASE">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hà Nội</div>
+          </div>
+          <div class="event-details">
+            <h3>BOF DEBUT SHOWCASE</h3>
+            <p class="event-price">Từ 500.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i> 20 tháng 04, 2025</p>
+          </div>
+        </a>
+      </div>
+  
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/workshop/workshop1.png" alt="[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+          </div>
+          <div class="event-details">
+            <h3>[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM<br>NẾN THƠM VÀ SÁP THƠM HANDMADE</h3>
+            <p class="event-price">Từ 279.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i><time datetime="17:30 - 19:00, 26-04-2025">17:30 - 19:00, 26 tháng 04, 2025</time> </p>
+          </div>
+        </a>
+      </div>
+  
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/sport/sport1.png" alt="Trải nghiệm bắn súng thể thao tại Saigon Sniper">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+          </div>
+          <div class="event-details">
+            <h3>Trải nghiệm bắn súng thể thao tại Saigon Sniper</h3>
+            <p class="event-price">Từ 35.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i> 05 tháng 10, 2025</p>
+          </div>
+        </a>
+      </div>
+  
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/culture/culture1.png" alt="The “Traditional Water Puppet Show” - Múa rối nước">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+          </div>
+          <div class="event-details">
+            <h3>The “Traditional Water Puppet Show” - Múa rối nước</h3>
+            <p class="event-price">Từ 330.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i> 23 tháng 04, 2025</p>
+          </div>
+        </a>
+      </div>
+  
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/workshop/workshop2.png" alt="ART WORKSHOP UJI MATCHA CHEESECAKE TARTE">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hà Nội</div>
+          </div>
+          <div class="event-details">
+            <h3>ART WORKSHOP " UJI MATCHA CHEESECAKE TARTE"</h3>
+            <p class="event-price">Từ 420.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i> 25 tháng 04, 2025</p>
+          </div>
+        </a>
+      </div>
+  
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/sport/sport2.png" alt="Giải cờ vua Hà Nội mở rộng GO-VCHESS 2025: Vietnam Chess Championship”">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hà Nội</div>
+          </div>
+          <div class="event-details">
+            <h3>[GO-VCHESS 2025] Giải cờ vua Hà Nội mở rộng: Vietnam Chess Championship</h3>
+            <p class="event-price">Từ 250.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i> 25 tháng 05, 2025</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/music/music3.png" alt="LỄ KỶ NIỆM 2 NĂM HONKAI: STAR RAIL - BUỔI XEM LIVE STAR RAIL 2025 - HỒ CHÍ MINH">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+          </div>
+          <div class="event-details">
+            <h3>LỄ KỶ NIỆM 2 NĂM HONKAI: STAR RAIL - BUỔI XEM LIVE STAR RAIL 2025 - HỒ CHÍ MINH</h3>
+            <p class="event-price">Từ 250.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i><time datetime="18:00 - 20:00, 03-05-2025">18:00 - 20:00, 03 tháng 05, 2025</time> </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="event-card">
+        <a href="#">
+          <div class="event-image">
+            <img src="images/culture/culture2.png" alt="MADAME SHOW - NHỮNG ĐƯỜNG CHIM BAY">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Lâm Đồng</div>
+          </div>
+          <div class="event-details">
+            <h3>LỄ KỶ NIỆM 2 NĂM HONKAI: STAR RAIL - BUỔI XEM LIVE STAR RAIL 2025 - HỒ CHÍ MINH</h3>
+            <p class="event-price">Từ 650.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i><time datetime="18:30 - 19:30, 26-04-2025">18:30 - 20:00, 26 tháng 04, 2025</time> </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    
   </div>
 
-  <!-- Main Content Section -->
-  <div class="content">
-    <h2>Chào mừng bạn đến với EventVista!</h2>
-    <p>Hãy khám phá và tham gia những sự kiện đặc biệt thú vị trên khắp cả nước!</p>
-  </div>
+  <!-- Share story -->
+  <div id="vietnam-charm" data-lang="en">
+    <div class="container text-center" style="padding-bottom: 40px;">
+        <h2 class="section-heading text-uppercase gothambold">SHARE YOUR STORY</h2>
+        <p class="section-desc">
+            Tag your best <span style="color: blueviolet;">#LiveFullyinVietnam</span> moments on Instagram
+        </p>
+        <div>
+        <div class="instagram-grid">
+            <div class="grid-item">
+                <a href="https://www.instagram.com/p/DI0HgjPTLlC/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/music/music1_1.png">
+                    <div class="overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="https://www.instagram.com/p/DIoyuyvzEsG/" target="_blank" rel="noopener noreferrer">
+                    <img src="//image.vietnam.travel/sites/default/files/styles/article_photo_large/public/2025-04/490761633_533049362942598_4732371127371618339_n.jpg?itok=1YZ0coxj" alt="instagram-image">
+                    <div class="overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="https://www.instagram.com/p/DIoyuyvzEsG/" target="_blank" rel="noopener noreferrer">
+                    <img src="//image.vietnam.travel/sites/default/files/styles/article_photo_large/public/2025-04/490761633_533049362942598_4732371127371618339_n.jpg?itok=1YZ0coxj" alt="instagram-image">
+                    <div class="overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="https://www.instagram.com/p/DIoyuyvzEsG/" target="_blank" rel="noopener noreferrer">
+                    <img src="//image.vietnam.travel/sites/default/files/styles/article_photo_large/public/2025-04/490761633_533049362942598_4732371127371618339_n.jpg?itok=1YZ0coxj" alt="instagram-image">
+                    <div class="overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+            </div>
+        </div>
+        <div class="instagram-grid">
+          <div class="grid-item wide">
+            <a href="https://www.instagram.com/p/DIoyuyvzEsG/" target="_blank" rel="noopener noreferrer">
+                <img src="//image.vietnam.travel/sites/default/files/styles/article_photo_large/public/2025-04/490761633_533049362942598_4732371127371618339_n.jpg?itok=1YZ0coxj" alt="instagram-image">
+                <div class="overlay"><i class="fab fa-instagram"></i></div>
+            </a>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+                 
   <!-- Footer Section -->
   <footer class="box-footer">
     <div class="wrap wrap-footer">
@@ -101,7 +355,6 @@
                     <li><a href="#">Sứ mệnh & Tầm nhìn</a></li>
                     <li><a href="#">Đội ngũ phát triển</a></li>
                     <li><a href="#">Tin tức & Blog</a></li>
-                    <li><a href="#">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -110,7 +363,6 @@
                   <div class="line"></div>
                     <li><a href="#">Sự kiện nổi bật</a></li>
                     <li><a href="#">Sự kiện sắp diễn ra</a></li>
-                    <li><a href="#">Sự kiện theo địa điểm</a></li>
                     <li><a href="#">Sự kiện miễn phí</a></li>
                     <li><a href="#">Tổ chức sự kiện với chúng tôi</a></li></ul>
             </div>
@@ -118,7 +370,6 @@
               <h3>Tài khoản người dùng</h3>
               <ul>                    
                   <div class="line"></div>
-                    <li><a href="#">Đăng ký/Đăng nhập</a></li>
                     <li><a href="#">Quản lý vé</a></li>
                     <li><a href="#">Sự kiện của tôi</a></li>
                     <li><a href="#">Lịch sử tham gia</a></li>
@@ -152,5 +403,32 @@
 <div class="box-copyright">
   <p> Copyright © 2025.<strong> All Rights Reserved.</strong></p>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchToggleBtn = document.querySelector('.search-toggle-btn');
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    const categorySearchBar = document.querySelector('.category-search-bar'); // Lấy container cha
+
+    searchToggleBtn.addEventListener('click', function() {
+        searchForm.style.display = 'flex'; // Hoặc 'block' tùy theo cách bạn muốn form hiển thị
+        searchToggleBtn.style.display = 'none';
+        searchInput.focus();
+
+        // Thêm class 'search-active' vào container cha để có thể điều chỉnh layout nếu cần
+        categorySearchBar.classList.add('search-active');
+    });
+
+    // Ẩn form khi click ra ngoài (tùy chọn)
+    document.addEventListener('click', function(event) {
+        if (!searchForm.contains(event.target) && !searchToggleBtn.contains(event.target) && searchForm.style.display === 'flex') {
+            searchForm.style.display = 'none';
+            searchToggleBtn.style.display = 'block';
+            categorySearchBar.classList.remove('search-active');
+        }
+    });
+});
+</script>
 </body>
 </html>
