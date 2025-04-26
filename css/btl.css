@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+li {
+  list-style: none;
+  margin: 12px;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Thừa hưởng màu chữ từ parent */
+}
+
+/* main */
+main {
+  padding: 20px 50px; /* Thêm padding cho phần main */
+}
+.wrap-thumb{
+  margin-top:20px;
+}
+.intro {
+  background-color: #f8f8f8; /* Màu nền cho phần giới thiệu */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin-top:20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.intro h2 {
+  color: #076bb8;
+  margin-bottom: 15px;
+}
+
+.intro p {
+  line-height: 1.6;
+  color: #555;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Thêm padding cho container */
+}
+
+.event section h2 {
+  color: #076bb8;
+  margin-bottom: 20px;
+  text-align: left; /* Căn trái tiêu đề section */
+}
+
+.event-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px; /* Thêm margin dưới cho danh sách sự kiện */
+}
+
+.event-item {
+  width: calc(33.33% - 20px); /* Ba cột trên màn hình lớn, có khoảng cách */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.event-item:hover {
+  transform: translateY(-5px); /* Hiệu ứng nổi nhẹ khi hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.event-item .link {
+  display: block; /* Làm cho toàn bộ item là một link */
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-image {
+  position: relative; /* Cần thiết cho các overlay (nếu có) */
+  overflow: hidden; /* Ẩn các phần tử con tràn ra ngoài */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+ .wrap-thumb{
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+ .hcm .image-container{
+  background-image: url('images/city/HoChiMinh.jpg'); /* Đường dẫn đến ảnh của bạn */
+ }
+.hn .image-container{
+  background-image: url('images/city/HaNoi.jpg');
+}
+ .image-container {
+  background-size: cover; /* Đảm bảo ảnh phủ kín vùng chứa */
+  background-position: center; /* Căn giữa ảnh nền */
+  height: 100vh; /* Chiều cao bằng 100% chiều cao viewport */
+  position: relative; /* Quan trọng để định vị tuyệt đối cho phần tử con */
+  display: flex; /* Sử dụng flexbox để dễ dàng căn chỉnh chữ */
+  justify-content: center; /* Căn chữ theo chiều ngang */
+  align-items: center; /* Căn chữ theo chiều dọc */
+  text-align: center; /* Căn chữ bên trong phần tử h2 */
+}
+ .overlay-text {
+  color: white; /* Màu chữ */
+  font-size: 5em; /* Kích thước chữ lớn */
+    font-weight: bold; /* Chữ đậm */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tạo bóng đổ cho chữ nổi bật */
+    font-family:cursive; /* Sử dụng một font chữ viết tay tương tự */
+    margin: 0; /* Loại bỏ margin mặc định của h1 */
+}
+
+.event-image img {
+  width: 100%;
+  height: 200px;
+  object-fit:cover;
+  display: block;
+  transition: transform 0.3s ease-out;
+}
+
+.event-item:hover .event-image img {
+  transform: scale(1.05); /* Hiệu ứng zoom nhẹ khi hover */
+}
+
+.event-details {
+  padding: 10px 0;
+}
+
+.event-details p {
+  color: #777;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+}
+
+.event-details h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.price {
+  color: #076bb8;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.time {
+  color: #555;
+  font-size: 0.85em;
+}
+
+.time span:last-child {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .event-item {
+    width: calc(50% - 20px); /* Hai cột trên màn hình vừa */
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menu li {
+    margin: 8px 0;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+
+  .menu li:last-child {
+    border-bottom: none;
+  }
+
+  .search-container {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search-container li {
+    padding: 8px;
+  }
+
+  .search-container li:first-child {
+    width: 80%;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .event-item {
+    width: 100%; 
+  }
+}
