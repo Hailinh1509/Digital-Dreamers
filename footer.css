@@ -1,0 +1,241 @@
+ /* Footer */
+ .box-footer {
+    background-color: #f7f7f7; 
+    padding: 60px 0; /* Khoảng cách trên và dưới */
+  }
+  
+  .wrap-footer {
+    max-width: 1200px; /* Chiều rộng tối đa của nội dung */
+    margin: 0 auto; /* Căn giữa nội dung */
+    display: flex; /* Sử dụng flexbox để sắp xếp các phần tử con */
+    justify-content: space-between; /* Phân bố đều khoảng trắng giữa các phần tử */
+    padding: 0 20px; 
+  }
+  
+  /* Styles for the left footer (form) */
+  .left-footer {
+    flex: 1; /* Chiếm không gian còn lại */
+    margin-right: 30px; /* Khoảng cách bên phải */
+  }
+  
+  .title-footer {
+    margin-bottom: 20px;
+  }
+  
+  .title-footer span {
+    font-size: 14px;
+    color: #777; 
+    display: block; /* Xuống dòng */
+    margin-bottom: 5px;
+  }
+  
+  .title-footer h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .left-footer .line {
+    border-bottom: 2px solid #e0e0e0; 
+    margin-bottom: 30px;
+  }
+  
+  .form-message input[type="text"],
+  .form-message textarea {
+    width: 100%; 
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-sizing: border-box; /* Tính cả padding và border vào kích thước */
+    font-size: 16px;
+  }
+  
+  .form-message textarea {
+    resize: vertical; /* Cho phép kéo dọc */
+    min-height: 100px;
+  }
+  
+  .form-message .checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-message .checkbox input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  .form-message .checkbox span {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .btn-send {
+    background-color: #ff7f50; 
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu khi hover */
+  }
+  
+  .btn-send:hover {
+    background-color: #e6734a; /* Màu cam đậm hơn khi hover */
+  }
+  
+  /* Styles for the right footer (lists of information) */
+  .right-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tạo 3 cột bằng nhau */
+    grid-template-rows: auto auto; /* Tự động điều chỉnh số hàng */
+    gap: 40px; /* Khoảng cách giữa các cột và hàng */
+  }
+  
+  .footer-column h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column .line {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 15px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 8px;
+  }
+  
+  .footer-column ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ff7f50;
+  }
+  
+  .right-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .right-footer ul h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .right-footer ul .line {
+    border-bottom: 2px solid #e0e0e0;
+    margin-bottom: 15px;
+  }
+  
+  .right-footer ul li {
+    margin-bottom: 8px;
+  }
+  
+  .right-footer ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .right-footer ul li a:hover {
+    color: #ff7f50; 
+  }
+  
+  .footer-info {
+    grid-column: 2 / 4; /* Bắt đầu từ cột 2 và kéo dài đến cột 4 (hết cột 3) */
+    text-align: right;
+}
+
+.footer-info p {
+    font-size: 15px; /* Tăng kích thước chữ (điều chỉnh theo ý muốn) */
+    font-style: italic;
+    margin-top: 10px; /* Điều chỉnh khoảng cách với logo nếu cần */
+}
+
+.footer-logo {
+    max-width: 280px; /* Điều chỉnh kích thước logo */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-info p a {
+    text-decoration: none;
+    color: #555;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-info p a:hover {
+    color: #ff7f50;
+}
+
+.box-copyright {
+  border: 1px solid white;
+  background-color: #dfdbe0f0 ;/* Màu nền tương tự footer cũ */
+  color: rgb(95, 88, 88);
+  text-align: center; /* Căn giữa chữ theo chiều ngang */
+  padding: 15px;
+  font-size: 14px;
+}
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .wrap-copyright {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+  
+    .info-copyright {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+      margin-left: 0; 
+    }
+    
+    .right-footer {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột trên màn hình nhỏ */
+        gap: 30px;
+    } 
+
+    .footer-info {
+        grid-column: 1 / 2; /* Chiếm toàn bộ cột */
+        text-align: left; /* Canh trái nội dung trên màn hình nhỏ */
+    }
+
+    .iframe-footer {
+        width: 100%; 
+        height: auto; /* Chiều cao tự động điều chỉnh theo tỷ lệ */
+    }
+
+    .footer-info p {
+        font-size: 16px; /* Kích thước chữ nhỏ hơn trên màn hình nhỏ */
+        text-align: left; /* Canh trái trên màn hình nhỏ */
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .footer-logo {
+        max-width: 100%; 
+        height: auto;
+        margin-bottom: 10px;
+    }
+  }
