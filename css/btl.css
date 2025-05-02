@@ -58,17 +58,19 @@ main {
 
 .event-list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 30px; /* Thêm margin dưới cho danh sách sự kiện */
 }
 
 .event-item {
-  width: calc(33.33% - 20px); /* Ba cột trên màn hình lớn, có khoảng cách */
+ flex: 0 0 calc(33.33% - 20px); /* ba cột trên màn hình lớn */
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
   margin-bottom: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease-in-out;
 }
