@@ -143,8 +143,8 @@
   
         <div class="price-section">
           <hr class="divider">
-          <p class="price">Giá từ <strong>330.000 đ</strong></p>
-          <a href="#" class="buy-button"><strong>CHỌN LỊCH DIỄN</strong></a>
+          <p class="price">Giá từ <strong>330.000 đ </strong><i class="fa fa-chevron-right" style="font-size:medium"></i></p> 
+          <a href="#" class="buy-button"><strong>MUA VÉ NGAY</strong></a>
         </div>
       </div>
   
@@ -153,7 +153,7 @@
   </div>
   
 
-<div class="Vùng_thông_tin">
+<div class="Vùng_thông_tin" id="gioiThieu">
             <div class="featured-events-header">
                 <h2>Giới thiệu</h2>
               </div>
@@ -162,7 +162,7 @@
                 <div class="collapse-content" id="gioiThieuContent">
         <h3 style="text-align: center;"> The “Traditional Water Puppet Show” - Múa rối nước </h3>
         <div class="text-center my-4">
-        <img src="../images/culture/The “Traditional Water Puppet Show” - Múa rối nước/ành2.jpg" alt="Image 2" class="img-fluid"></div><BR>
+        <img src="../images/culture/The “Traditional Water Puppet Show” - Múa rối nước/ành2.jpg" style="max-width: 700px;" alt="Image 2" class="img-fluid"></div>
         <em> *Quý khách vui lòng tham dự đúng giờ, trường hợp quý khách đến trễ hơn giờ diễn chung tôi sẽ không hỗ trợ <br>
 
 **Please attend on time, in case customer arrive later than the concert time, we will not support</em>
@@ -173,7 +173,7 @@
 
               </div>
   
-         <div class="Vùng_thông_tin">
+         <div class="Vùng_thông_tin" id="ticket-info">
                 <div class="featured-events-header">
                   <h2>THÔNG TIN VÉ</h2>
                 </div>
@@ -403,14 +403,21 @@
 
 
 <script>
-  function toggleCollapse() {
-    const wrapper = document.querySelector('.collapse-wrapper');
-    wrapper.classList.toggle('expanded');
-  
-    const button = wrapper.querySelector('.collapse-toggle');
-    button.textContent = wrapper.classList.contains('expanded') ? "Thu gọn" : "Xem thêm";
-  }
-  </script>
+    function toggleCollapse() {
+      const wrapper = document.querySelector('.collapse-wrapper');
+      wrapper.classList.toggle('expanded');
+    const isExpanded = wrapper.classList.contains('expanded');
+      const button = wrapper.querySelector('.collapse-toggle');
+      
+      button.textContent = wrapper.classList.contains('expanded') ? "Thu gọn" : "Xem thêm";
+      
+
+  if (!isExpanded) {
+      const section = document.getElementById("gioiThieu");
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    }
+    </script>
 
 <script>
 function toggleAll() {
@@ -426,5 +433,20 @@ function toggleAll() {
   btn.textContent = anyHidden ? "Thu gọn" : "Xem tất cả";
 }
 </script>
+<!--Khi nhấn vào GIÁ TỪ... Máy cuộn xuống Thông tin vé-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const priceElement = document.querySelector(".price");
+    const ticketInfoSection = document.getElementById("ticket-info");
+
+    if (priceElement && ticketInfoSection) {
+      priceElement.style.cursor = "pointer"; 
+      priceElement.addEventListener("click", function () {
+        ticketInfoSection.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

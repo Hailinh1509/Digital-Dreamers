@@ -123,7 +123,10 @@
  
   <div class="banner_sk">
     <div class="banner-container">
-      <div class="banner-left">
+    <div class="banner-left">
+        <img src="../images/music/LULULOLA SHOW VŨ CÁT TƯỜNG  TỪNG LÀ/ảnh1.png" alt="Hình ảnh sự kiện" class="banner-image">
+      </div>
+      <div class="banner-right">
         <h2 class="event-title">LULULOLA SHOW VŨ CÁT TƯỜNG | TỪNG LÀ</h2>
   
         <div class="event-time">
@@ -141,20 +144,18 @@
   
         <div class="price-section">
           <hr class="divider">
-          <p class="price">Giá từ <strong>500.000 đ</strong></p>
+          <p class="price">Giá từ <strong>500.000 đ </strong><i class="fa fa-chevron-right" style="font-size:medium"></i></p>
         
           <a href="#" class="buy-button"><strong>MUA VÉ NGAY</strong></a>
         </div>
       </div>
   
-      <div class="banner-right">
-        <img src="../images/music/LULULOLA SHOW VŨ CÁT TƯỜNG  TỪNG LÀ/ảnh1.png" alt="Hình ảnh sự kiện" class="banner-image">
-      </div>
+  
     </div>
   </div>
   
 
-<div class="Vùng_thông_tin">
+<div class="Vùng_thông_tin" id="gioiThieu">
             <div class="featured-events-header">
                 <h2>Giới thiệu</h2>
               </div>
@@ -179,7 +180,7 @@
               </div>
   
 
-              <div class="Vùng_thông_tin">
+              <div class="Vùng_thông_tin" id="ticket-info">
                 <div class="featured-events-header">
                   <h2>THÔNG TIN VÉ</h2>
                 </div>
@@ -295,12 +296,12 @@
 <div class="Vùng_thông_tin">
   <div class="featured-events-header">
     <h2>Các sự kiện liên quan</h2>
-    <a href="#" class="view-more-header">Xem thêm <i class="fa fa-chevron-right"></i></a>
+    
   </div>
 <div class="featured-events">
     <div class="events-grid">
       <div class="event-card">
-        <a href="../chitiet_su_kien/ANH TRAI SAY HI CONCERT.html">
+        <a href="../chitiet_su_kien/[Hà Nội] Những Thành Phố Mơ Màng Summer 2025.html">
           <div class="event-image">
             <img src="../images/music/[Hà Nội] Những Thành Phố Mơ Màng Summer 2025/ảnh1.png" alt="">
             <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hà Nội</div>
@@ -411,9 +412,16 @@
     function toggleCollapse() {
       const wrapper = document.querySelector('.collapse-wrapper');
       wrapper.classList.toggle('expanded');
-    
+    const isExpanded = wrapper.classList.contains('expanded');
       const button = wrapper.querySelector('.collapse-toggle');
+      
       button.textContent = wrapper.classList.contains('expanded') ? "Thu gọn" : "Xem thêm";
+      
+
+  if (!isExpanded) {
+      const section = document.getElementById("gioiThieu");
+      section.scrollIntoView({ behavior: "smooth" });
+    }
     }
     </script>
 
@@ -430,6 +438,20 @@ function toggleAll() {
 
   btn.textContent = anyHidden ? "Thu gọn" : "Xem tất cả";
 }
+</script>
+<!--Khi nhấn vào GIÁ TỪ... Máy cuộn xuống Thông tin vé-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const priceElement = document.querySelector(".price");
+    const ticketInfoSection = document.getElementById("ticket-info");
+
+    if (priceElement && ticketInfoSection) {
+      priceElement.style.cursor = "pointer"; 
+      priceElement.addEventListener("click", function () {
+        ticketInfoSection.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  });
 </script>
 </body>
 </html>
