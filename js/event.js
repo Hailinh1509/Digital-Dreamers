@@ -1,53 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-   // Lấy các thành phần trong DOM cần dùng
-  const citySelect = document.getElementById('citySelect');
   const recommendedSection = document.querySelector('#recommended-events .event-list');
-  const eventItems = recommendedSection.querySelectorAll('.event-item');
+  const eventItems = recommendedSection.querySelectorAll('.event-card');
   const pagination = document.getElementById("pagination");
   const itemsPerPage = 6;// Số item mỗi trang
   let currentPage = 1;
   // Mảng chứa các item đang hiển thị (theo lọc hoặc tất cả)
-  let filteredItems = Array.from(eventItems); // Bắt đầu với toàn bộ item
+  let filteredItems = Array.from(eventItems);
 
- //1. Khi người dùng thay đổi thành phố → lọc lại sự kiện
-  citySelect.addEventListener('change', function () {
-    const selectedCity = this.value;
-    // Lọc theo thành phố, đồng thời cập nhật trạng thái ẩn/hiện
-    filteredItems = Array.from(eventItems).filter(item => {
-      const eventCity = item.getAttribute('data-city');
-      const match = selectedCity === 'all' || selectedCity === eventCity;
-      item.classList.toggle("hidden", !match);// Ẩn nếu không khớp
-      return match;
-    });
-    createPagination();// Tạo lại phân trang
-    showPage(1); // Hiển thị lại trang đầu
-  });
-//2.loc su kien
-document.addEventListener('DOMContentLoaded', function () {
-  const categorySelect = document.getElementById('categorySelect');
-  const recommendedSection = document.querySelector('#recommended-events .event-list');
-  const eventItems = recommendedSection.querySelectorAll('.event-item');
-
-  categorySelect.addEventListener('change', function () {
-    const selectedCategory = this.value;
-
-    eventItems.forEach(item => {
-      const eventCategory = item.getAttribute('data-category');
-      
-      if (selectedCategory === 'all' || selectedCategory === eventCategory) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  });
-});
-//3.phan trangtrang
-// Hàm hiển thị các item trong trang tương ứng
   function showPage(page) {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-
+eventItems.forEach(item => item.classList.add("hidden"));
     filteredItems.forEach((item, index) => {
       if (index >= start && index < end) {
         item.classList.remove("hidden");// Hiện item trong phạm vi trang
@@ -107,63 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     pagination.appendChild(next);
   }
-
   // Khởi tạo lần đầu khi trang vừa load
   createPagination();
   showPage(1);
 });
-//5. chinh blog bang anh
-const track = document.querySelector('.slider-track');
-  const dots = document.querySelectorAll('.dot');
-  const images = document.querySelectorAll('.slider-track img');
-  const sidebar = document.querySelector('.sidebar-container');
-
-  let index = 0;
-
-  function syncSidebarHeight() {
-    if (!sidebar || !images[index]) return;
-    sidebar.style.height = `${images[index].offsetHeight}px`;
-  }
-
-  function showSlide(i) {
-    track.style.transform = `translateX(-${i * 100}%)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[i].classList.add('active');
-    index = i;
-    syncSidebarHeight(); // Cập nhật chiều cao mỗi lần đổi ảnh
-  }
-
-  function nextSlide() {
-    index = (index + 1) % dots.length;
-    showSlide(index);
-  }
-
-  let interval = setInterval(nextSlide, 3000); // Auto slide
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      showSlide(i);
-      clearInterval(interval);
-      interval = setInterval(nextSlide, 4000); // Reset timer
-    });
-  });
-
-  window.addEventListener('load', () => {
-    showSlide(index); // Hiển thị ảnh đầu và set chiều cao
-  });
- window.addEventListener('resize', syncSidebarHeight); // Cập nhật khi resize
-//6. slider
-let currentIndex = 0;
-
-function scrollSlider(direction) {
-  const slider = document.getElementById("slider");
-  const cardWidth = 420; // width + gap
-  const maxIndex = slider.children.length - 2;
-
-  currentIndex += direction;
-
-  if (currentIndex < 0) currentIndex = 0;
-  if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-  slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-}
