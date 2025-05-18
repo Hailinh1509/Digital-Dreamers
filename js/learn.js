@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-
 // Hiện lên khi cuộn đến và ẩn khi cuộn xuống
 document.addEventListener("DOMContentLoaded", function () {
   const info = document.querySelector(".image-info");
@@ -36,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const rect = info.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    // Nếu phần tử lọt vào khung nhìn
     if (rect.top < windowHeight && rect.bottom > 0) {
       info.classList.add("visible");
     } else {
@@ -84,22 +81,21 @@ function checkEmail() {
 }
 
 // Khi người dùng bắt đầu nhập, ẩn thông báo lỗi
-emailInput.addEventListener("input", function () {
-  if (emailInput.value.trim() !== "") {
-    errorMsg.style.display = "none";
-  }
-});
+  emailInput.addEventListener("input", function () {
+    if (emailInput.value.trim() !== "") {
+      errorMsg.style.display = "none";
+    }
+  });
 
-// Khi người dùng nhấn Enter
-emailInput.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    e.preventDefault(); // Ngăn submit mặc định
-    checkEmail();       // Gọi hàm kiểm tra
-  }
-});
+  emailInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Ngăn submit mặc định
+      checkEmail();      
+    }
+  });
 
 // Hiện Đăng ký/ Đăng nhập
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     const userIcon = document.getElementById('userIcon');
     const userMenu = document.getElementById('userMenu');
     const userDropdown = document.querySelector('.user-dropdown');
@@ -108,7 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
         userMenu.style.display = (userMenu.style.display === 'block') ? 'none' : 'block';
     });
 
-    // Đóng dropdown khi nhấp chuột ra ngoài
     document.addEventListener('click', function(event) {
         if (userDropdown && !userDropdown.contains(event.target)) {
             userMenu.style.display = 'none';
@@ -117,23 +112,40 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Back to top
-const backToTopBtn = document.getElementById("backToTopBtn");
-const zaloBtn = document.getElementById("zaloBtn");
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  const zaloBtn = document.getElementById("zaloBtn");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTopBtn.style.display = "block";
-    zaloBtn.style.display = "block";
-  } else {
-    backToTopBtn.style.display = "none";
-    zaloBtn.style.display = "none";
-  }
-});
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = "block";
+      zaloBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+      zaloBtn.style.display = "none";
+    }
+  });
 
-backToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+// Chữ hiện trên videp
+document.addEventListener("DOMContentLoaded", function () {
+  const text = "Khám phá những sự kiện tuyệt vời khắp Việt Nam";
+  const words = text.split(" ");
+  const overlay = document.getElementById("video");
+
+  words.forEach((word, index) => {
+    const span = document.createElement("span");
+    span.className = "word";
+    span.style.animationDelay = `${index * 0.1}s`; // tạo hiệu ứng rơi cách nhau
+    span.textContent = word;
+    overlay.appendChild(span);
   });
 });
+
+
 
