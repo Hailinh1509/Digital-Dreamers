@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', function () {
+   // Lấy các thành phần trong DOM cần dùng
+  const citySelect = document.getElementById('citySelect');
   const recommendedSection = document.querySelector('#recommended-events .event-list');
   const eventItems = recommendedSection.querySelectorAll('.event-card');
   const pagination = document.getElementById("pagination");
   const itemsPerPage = 6;// Số item mỗi trang
   let currentPage = 1;
   // Mảng chứa các item đang hiển thị (theo lọc hoặc tất cả)
-  let filteredItems = Array.from(eventItems);
+  let filteredItems = Array.from(eventItems); // Bắt đầu với toàn bộ item
 
+//3.phân trang
+// Hàm hiển thị các item trong trang tương ứng
   function showPage(page) {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-eventItems.forEach(item => item.classList.add("hidden"));
+
     filteredItems.forEach((item, index) => {
       if (index >= start && index < end) {
         item.classList.remove("hidden");// Hiện item trong phạm vi trang
