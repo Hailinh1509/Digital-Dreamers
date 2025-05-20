@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Liên Hệ - EventVista</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/footer.css"> 
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="footer.css"> 
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="sukien.css">
     <style> 
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
         }
 
         body {
@@ -96,7 +100,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('images/home/moutain.jpg');
+            background-image: url('6.jpg');
             background-size: cover;
             background-position: center;
             filter: rgba(0, 0, 0, 0.7); 
@@ -263,24 +267,111 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="images/LOGO_footer.png" alt="EventVista">
+    <!-- Welcome Section -->
+  <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0123 456 789</div>
+          <a class="contact-item zalo" href="#" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html">TRANG CHỦ</a>
+            <a href="#"> THÀNH PHỐ </a>
+            <a href="#">SỰ KIỆN NỔI BẬT</a>
+            <a href="#">ĐẶT VÉ</a>
+            <a href="#">LIÊN HỆ</a>
+        </nav>
+        <div class="user-actions">
+          <div class="user_bar">
+            <div class="user-links">
+              <ul class="nav navbar_nav">
+                <li id="login" class="log_action">
+                  <a href="#">Đăng nhập</a>
+                </li>
+                <span>|</span>
+                <li id="register" class="log_action">
+                  <a href="#">Đăng ký</a>
+                </li>
+              </ul>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Trang Chủ</a></li>
-                    <li><a href="#">Những thành phố lớn</a></li>
-                    <li><a href="#">Sự kiện</a></li>
-                    <li><a href="#">Chi tiết sự kiện</a></li>
-                    <li><a href="#">Đặt vé</a></li>
-                    <li><a href="#">Liên Hệ</a></li>
-                </ul>
-            </nav>
+          </div>
+        </div>
+        <div class="user-icon">
+             <i class="fa fa-user"></i>
         </div>
     </header>
+</div>
+
+<div class="category-search-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <button class="hamburger-menu-toggle">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+        <ul class="category-list d-flex align-items-center">
+            <li class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-music fa-lg"></i>
+                </div>
+                <a href="#" class="category-link">Ca nhạc</a>
+            </li>
+            <li class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-palette fa-lg"></i>
+                </div>
+                <a href="#" class="category-link">Văn hóa - Nghệ thuật</a>
+            </li>
+            <li class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-tools fa-lg"></i>
+                </div>
+                <a href="#" class="category-link">Workshop</a>
+            </li>
+            <li class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-futbol fa-lg"></i>
+                </div>
+                <a href="#" class="category-link">Thể thao</a>
+            </li>
+            <li class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-newspaper fa-lg"></i>
+                </div>
+                <a href="#" class="category-link">Tin tức</a>
+            </li>
+            <li class="category-item">
+                <div class="category-icon">
+                    <i class="fas fa-ellipsis-h fa-lg"></i>
+                </div>
+                <a href="#" class="category-link">Khác</a>
+            </li>
+        </ul>
+        <form class="search-form" id="searchForm">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Tìm kiếm sự kiện..." aria-label="Search" id="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+        <button class="search-toggle-btn">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+  </div>
 
     <!-- Main -->
     <main>
@@ -289,8 +380,8 @@
         padding: 0px 30px 0px 30px;
         }
         </style>
-        <div class="jumbotron text-center" style= "background-image: url('D:/New folder (2)/New folder (2)/Paint/Ảnh nền/6.jpg'); background-size: cover; background-position: center; color: wheat; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); padding: 150px 20px; margin-left: 0; margin-right: 0; margin-bottom: 100;">
-        <h1 calss= "page-title"><span style="font-size: 250%;">Thông Tin Liên Hệ </span></h1>
+          <div class="jumbotron text-center" style="background-image: url('6.jpg'); background-size: cover; background-position: center; color: wheat; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); padding: 130px 20px; margin-left: 0; margin-right: 0; margin-bottom: 100;">
+            <h1 calss= "page-title"><span style="font-size: 250%;">Thông Tin Liên Hệ </span></h1>
         <p class="page-description"><span style="font-size: 120%;">Vui lòng liên hệ nếu bạn có các vấn đề cần giải đáp</span></p>	
         </div>	
         <style>
@@ -303,21 +394,22 @@
         }
         }
         </style>
+
         <div class="contact-section">
             <!-- Thông tin liên hệ -->
             <div class="contact-info">
                 <h3>Liên Hệ Với Chúng Tôi Qua</h3>
-                <p><strong>Địa chỉ:</strong> Park 1, Park Hill, Times City, Thành phố Hà Nội</p>
-                <p><strong>Điện thoại:</strong> 098 8780 324</p>
+                <p><strong>Địa chỉ:</strong> 12 P. Chùa Bộc, Quang Trung, Đống Đa, Thành phố Hà Nội</p>
+                <p><strong>Điện thoại:</strong> 0123 456 789</p>
                 <p><strong>Email:</strong> <a href="mailto:support@eventvista.vn">support@eventvista.vn</a></p>
                 <div class="map-container">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.482920985143!2d105.86462731469307!3d21.01729998600522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8f8c0d5b5b%3A0x6f8b6e5f5b5c5b5b!2sPark%201%2C%20Times%20City%2C%20H%C3%A0%20N%E1%BB%99i!5e0!3m2!1svi!2s!4v1698765432100!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>                </div>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5979336490477!2d105.82612117352292!3d21.00874818846896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac800f450807%3A0x419a49bcd94b693a!2zSOG7jWMgVmnhu4duIE5nw6JuIEjDoG5n!5e0!3m2!1svi!2s!4v1745164625891!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>                </div>
             </div>
             <!-- Biểu mẫu liên hệ -->
             <div class="contact-form">
                 <h3>Gửi Liên Hệ</h3>
                 <form id="contactForm">
-                    <input type="text" id="name" placeholder="Họ và tên" required>
+                    <input type="text" id="name" placeholder="Họ tên" required>
                     <input type="email" id="email" placeholder="Email" required>
                     <input type="text" id="subject" placeholder="Chủ đề" required>
                     <textarea id="message" placeholder="Nội dung" required></textarea>
@@ -327,22 +419,88 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-          <div class="footer-info">
-            <img src="images/LOGO_main.png" alt="EventVista">
-            <h3>EventVista</h3>
-            <p><strong>Địa chỉ:</strong> Park 1, TimesCity, Hà Nội</p>
-            <p><strong>Hotline:</strong> 098 8780 324</p>
-            <p><strong>Email:</strong> <a href="mailto:contact@eventvista.com">contact@eventvista.com</a></p>
-        </div>
-        <div class="footer-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.482920985143!2d105.86462731469307!3d21.01729998600522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab8f8c0d5b5b%3A0x6f8b6e5f5b5c5b5b!2sPark%201%2C%20Times%20City%2C%20H%C3%A0%20N%E1%BB%99i!5e0!3m2!1svi!2s!4v1698765432100!5m2!1svi!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <p>EventVista © 2024. All rights reserved.</p>
-        </div>
-    </footer>
+    <footer class="box-footer">
+        <div class="wrap wrap-footer">
+            <div class="left-footer">
+                <div class="title-footer">
+                    <span>Write a message</span>
+                    <h3>Any Questions?</h3>
+                </div>
+                <div class="line"></div>
+                <form class="form-message">
+                    <input type="text" placeholder="Your Name" required="">
+                    <input type="text" placeholder="Your E-mail" required="">
+                    <textarea name="" id="" rows="5" placeholder="Your Message" required=""></textarea>
+                    <div class="checkbox">
+                        <input type="checkbox" required="">
+                        <span>By using this form you agree with the storage and handling of your data by this
+                            website.</span>
+                    </div>
+                    <button type="submit" class="btn-send">
+                        Send a message
+                    </button>
+                </form>
+            </div>
+            <div class="right-footer">
+                <div class="footer-column">
+                    <h3>Giới thiệu</h3>
+                    <ul> 
+                      <div class="line"></div>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Sứ mệnh & Tầm nhìn</a></li>
+                        <li><a href="#">Đội ngũ phát triển</a></li>
+                        <li><a href="#">Tin tức & Blog</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                  <h3>Sự kiện</h3>
+                    <ul> 
+                      <div class="line"></div>
+                        <li><a href="#">Sự kiện nổi bật</a></li>
+                        <li><a href="#">Sự kiện sắp diễn ra</a></li>
+                        <li><a href="#">Sự kiện theo địa điểm</a></li>
+                        <li><a href="#">Sự kiện miễn phí</a></li>
+                        <li><a href="#">Tổ chức sự kiện với chúng tôi</a></li></ul>
+                </div>
+                <div class="footer-column">
+                  <h3>Tài khoản người dùng</h3>
+                  <ul>                    
+                      <div class="line"></div>
+                        <li><a href="#">Đăng ký/Đăng nhập</a></li>
+                        <li><a href="#">Quản lý vé</a></li>
+                        <li><a href="#">Sự kiện của tôi</a></li>
+                        <li><a href="#">Lịch sử tham gia</a></li>
+                        <li><a href="#">Cập nhật thông tin cá nhân</a></li>
+                  </ul>
+                </div>
+                <div class="footer-column">
+                  <h3>Chính sách</h3>
+                    <ul>
+                      <div class="line"></div>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Chính sách thanh toán</a></li>
+                        <li><a href="#">Chính sách hoàn vé</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5979336490477!2d105.82612117352292!3d21.00874818846896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac800f450807%3A0x419a49bcd94b693a!2zSOG7jWMgVmnhu4duIE5nw6JuIEjDoG5n!5e0!3m2!1svi!2s!4v1745164625891!5m2!1svi!2s"
+                        width="450" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="iframe-footer" referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                  <p>Học viện Ngân Hàng - Số 12 Chùa Bộc, Đống Đa, Hà Nội</p>
+                  <p style="color: #efbf21"><strong>0123 456 789</strong></p>
+                  <p><a href="mailto:support@eventvista.vn">support@eventvista.vn</a></p>
+              </div>
+            </div>
+          </div>
+      </footer>
+      
+      <div class="box-copyright">
+      <p> Copyright © 2025.<strong> All Rights Reserved.</strong></p>
+      </div>
 
     <script>
         // Xử lý gửi biểu mẫu
