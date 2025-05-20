@@ -43,7 +43,7 @@
   <a href="../index.html">TRANG CHỦ</a>
 
   <div class="dropdown">
-    <a href="../city_sukien/city.html" class="city-link">THÀNH PHỐ</a>
+    <a href="city.html" class="city-link">THÀNH PHỐ</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content" id="cityMenu">
         <div class="dropdown-region">
@@ -110,8 +110,8 @@
             <i class="fa fa-user"></i>
         </div>
         <div class="login" id="userMenu">
-            <a href="#">Đăng ký</a>
-            <a href="#">Đăng nhập</a>
+            <a href="../DangKy_DangNhap.html">Đăng ký</a>
+            <a href="../DangKy_DangNhap.html">Đăng nhập</a>
         </div>
     </div>
 </header>
@@ -191,10 +191,10 @@
       <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
       <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
       <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
-      <p><a href="">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
       <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
-      <p><a href="">Điều kiện vận chuyển và giao nhận</a></p>
-      <p><a href="">Phương thức thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
     </div>
   </div>
 </footer>
@@ -217,19 +217,25 @@
   });
 </script>
 
-<script>
+<!-- Hiện chữ -->
+ <script>
   document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll(".section");
+    const sections = document.querySelectorAll(".section");
 
     function revealOnScroll() {
-      elements.forEach(el => {
-        if (el.classList.contains("visible")) return;
+      let delay = 0;
 
-        const rect = el.getBoundingClientRect();
+      sections.forEach((section, index) => {
+        if (section.classList.contains("visible")) return;
+
+        const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
         if (rect.top < windowHeight && rect.bottom > 0) {
-          el.classList.add("visible");
+          setTimeout(() => {
+            section.classList.add("visible");
+          }, delay);
+          delay += 200; // hiệu ứng lần lượt
         }
       });
     }
@@ -238,6 +244,7 @@
     revealOnScroll();
   });
 </script>
+
 
 <script src="../js/learn.js"></script>
 </body>
