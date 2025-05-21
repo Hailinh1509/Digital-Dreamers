@@ -6,7 +6,7 @@
     <title>Thành phố</title>
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/city.css">
+    <link rel="stylesheet" href="../css/sukien.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,7 +43,7 @@
   <a href="../index.html">TRANG CHỦ</a>
 
   <div class="dropdown">
-    <a href="#" class="city-link">THÀNH PHỐ</a>
+    <a href="../city_sukien/city.html" class="city-link">THÀNH PHỐ</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content" id="cityMenu">
         <div class="dropdown-region">
@@ -51,7 +51,7 @@
           <div class="img-center">
             <img src="../images/city/Hanoi.png" alt="Miền Bắc" class="region-img">
             <div class="overlay"></div>
-            <div class="image-text"><a href="city_sukien/Ha-noi.html">HA NOI</a></div>
+            <div class="image-text"><a href="Ha-noi.html">HA NOI</a></div>
           </div>
         <a href="#">Hạ Long</a>
         <a href="#">Thái Bình</a>
@@ -73,7 +73,7 @@
           <div class="img-center">
             <img src="../images/city/hcm.png" alt="Miền Nam" class="region-img">
             <div class="overlay"></div>
-            <div class="image-text"><a href="city_sukien/HCM.html">HO CHI MINH</a></div>
+            <div class="image-text"><a href="HCM.html">HO CHI MINH</a></div>
           </div>
         <a href="#">Bình Thuận</a>
         <a href="#">Cần Thơ</a>
@@ -83,14 +83,14 @@
   </div>
 
   <div class="dropdown">
-    <a href="#hot" class="city-link">SỰ KIỆN</a>
+    <a href="#" class="city-link">SỰ KIỆN</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content sub">
         <div class="dropdown-region">
-          <a href="#music">🎶 Ca nhạc - Live Shows</a>
-          <a href="#culture">🎭 Văn hóa - Nghệ thuật</a>
-          <a href="#workshop"> 🎓 Giáo dục - Workshop</a>
-          <a href="#sport"> ⚽ Thể thao</a>
+          <a href="ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
+          <a href="vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
+          <a href="workshop..html"> 🎓 Giáo dục - Workshop</a>
+          <a href="thethao.html"> ⚽ Thể thao</a>
       </div> 
     </div>
   </div>
@@ -117,81 +117,43 @@
 </header>
 </div>
 
-<!-- video sự kiện -->
-  <div class="video-container">
-    <video autoplay muted loop playsinline>
-      <source src="../video/video.mp4" type="video/mp4" />
-      Trình duyệt không hỗ trợ video.
-    </video>
-    <div id="video"></div>
-  </div>
-
-<!-- Liệt kê thành phố -->
-<div class="urban">
-  <h1>CÁC ĐIỂM ĐẾN TỔ CHỨC SỰ KIỆN HÀNG ĐẦU</h1>
-  <p>Khám phá những thành phố tiêu biểu tại Việt Nam – những địa điểm lý tưởng để tổ chức sự kiện, hội nghị và lễ hội lớn. <br> Mỗi thành phố mang đến những trải nghiệm độc đáo và tiện nghi hiện đại dành cho tổ chức sự kiện chuyên nghiệp.</p>
-
-  <!-- Hiện mặc định -->
-<div class="city">
-  <div class="city-container">
-    <a href="Ha-noi.html">
-    <div class="city-card">
-      <video src="../video/hanoi.mp4" autoplay muted loop></video>
-      <div class="city-name">Ha Noi</div>
+<!-- List loại sự kiện -->
+<div class="section">
+    <img src="https://img.icons8.com/emoji/452/musical-note-emoji.png" alt="Ca nhạc">
+    <div class="text-content">
+      <a href="ca-nhac.html"><h2>CA NHẠC</h2></a>
+      <p>Cháy hết mình với những đêm nhạc sôi động. Các buổi biểu diễn từ nghệ sĩ hàng đầu, đầy cảm hứng và năng lượng. Cùng bạn bè tận hưởng không khí lễ hội âm nhạc độc đáo.</p>
+      <a href="ca-nhac.html"><button>KHÁM PHÁ THÊM</button></a>
     </div>
-    </a>
+  </div>
 
-    <div class="city-card">
-      <video src="../video/danang.mp4" autoplay muted loop></video>
-      <div class="city-name">Da Nang</div>
+  <div class="section">
+    <img src="https://img.icons8.com/color/452/paint-palette.png" alt="Văn hóa nghệ thuật">
+    <div class="text-content">
+      <a href="vanhoa-nghethuat.html"><h2>VĂN HÓA NGHỆ THUẬT</h2></a>
+      <p>Thưởng thức tinh hoa nghệ thuật từ những triển lãm, buổi biểu diễn truyền thống và hiện đại. Một không gian giao thoa giữa sáng tạo và cảm xúc nghệ thuật.</p>
+      <a href="vanhoa-nghethuat.html"><button>KHÁM PHÁ THÊM</button></a>
     </div>
-
-    <a href="HCM.html">
-      <div class="city-card">
-        <video src="../video/hcm.mp4" autoplay muted loop></video>
-        <div class="city-name">Ho Chi Minh</div>
-      </div>
-    </a>
   </div>
 
-  <!-- Ẩn -->
-   <div class="city-container d-none" id="moreCities">
-      <div class="city-card">
-        <video src="../video/thaibinh.mp4" autoplay muted loop></video>
-        <div class="city-name">Thai Binh</div>
-      </div>
-
-      <div class="city-card">
-        <video src="../video/lamdong.mp4" autoplay muted loop></video>
-        <div class="city-name">Lam Dong</div>
-      </div>
-
-      <div class="city-card">
-        <video src="../video/phuquoc.mp4" autoplay muted loop></video>
-        <div class="city-name">Phu Quoc</div>
-      </div>
-
-      <div class="city-card">
-        <video src="../video/haiphong.mp4" autoplay muted loop></video>
-        <div class="city-name">Hai Phong</div>
-      </div>
-
-      <div class="city-card">
-        <video src="../video/nhatrang.mp4" autoplay muted loop></video>
-        <div class="city-name">Nha Trang</div>
-      </div>
-
-      <div class="city-card">
-        <video src="../video/cantho.mp4" autoplay muted loop></video>
-        <div class="city-name">Can Tho</div>
-      </div>
+  <div class="section">
+    <img src="https://img.icons8.com/color/452/training.png" alt="Workshop">
+    <div class="text-content">
+      <a href="workshop..html"><h2>WORKSHOP</h2></a>
+      <p>Học hỏi và phát triển bản thân qua các buổi workshop hấp dẫn về công nghệ, kỹ năng mềm, sáng tạo... Cơ hội kết nối và trải nghiệm thực tế đầy bổ ích.</p>
+      <a href="workshop..html"><button>KHÁM PHÁ THÊM</button></a>
+    </div>
   </div>
-</div>
-  <!-- Xem thêm thành phố -->
-  <div class="view-more-container text-center mt-3">
-    <button id="viewMoreBtn" class="btn btn-primary">Xem thêm</button>
+
+  <div class="section">
+    <img src="https://img.icons8.com/football" alt="Thể thao">
+    <div class="text-content">
+      <a href="thethao.html"><h2>THỂ THAO</h2></a>
+      <p>Bùng nổ năng lượng tại các giải đấu, hoạt động thể thao phong phú cho mọi lứa tuổi. Cùng nhau rèn luyện sức khỏe và chinh phục thử thách trên sân chơi.</p>
+      <a href="thethao.html"><button>KHÁM PHÁ THÊM</button></a>
+    </div>
   </div>
-</div>
+  
 <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
@@ -238,7 +200,7 @@
 </footer>
 
 <!-- Nút Zalo với chữ -->
-<a id="zaloBtn" href="https://zalo.me/1234567890" target="_blank" title="Liên hệ Zalo">
+<a id="zaloBtn" href="https://zalo.me/g/vpdgks851" target="_blank" title="Liên hệ Zalo">
   Zalo
 </a>
 
@@ -252,6 +214,28 @@
     const moreCities = document.getElementById("moreCities");
     moreCities.classList.remove("d-none");
     this.style.display = "none"; // Ẩn nút sau khi nhấn
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".section");
+
+    function revealOnScroll() {
+      elements.forEach(el => {
+        if (el.classList.contains("visible")) return;
+
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          el.classList.add("visible");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
   });
 </script>
 

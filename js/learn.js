@@ -132,7 +132,7 @@ function checkEmail() {
     });
   });
 
-// Chữ hiện trên videp
+// Chữ hiện trên video
 document.addEventListener("DOMContentLoaded", function () {
   const text = "Khám phá những sự kiện tuyệt vời khắp Việt Nam";
   const words = text.split(" ");
