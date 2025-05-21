@@ -1,80 +1,60 @@
-document.addEventListener('DOMContentLoaded', function () {
-   // Lấy các thành phần trong DOM cần dùng
-  const citySelect = document.getElementById('citySelect');
-  const recommendedSection = document.querySelector('#recommended-events .event-list');
-  const eventItems = recommendedSection.querySelectorAll('.event-card');
-  const pagination = document.getElementById("pagination");
-  const itemsPerPage = 6;// Số item mỗi trang
+const EVENTS_PER_PAGE = 6;
   let currentPage = 1;
-  // Mảng chứa các item đang hiển thị (theo lọc hoặc tất cả)
-  let filteredItems = Array.from(eventItems); // Bắt đầu với toàn bộ item
+  let filteredCards = [];
 
-//3.phân trang
-// Hàm hiển thị các item trong trang tương ứng
-  function showPage(page) {
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
+  function filterEvents() {
+    const selectedCity = document.getElementById('citySelect').value;
+    const allCards = Array.from(document.querySelectorAll('#recomrecom.event-card'));
 
-    filteredItems.forEach((item, index) => {
-      if (index >= start && index < end) {
-        item.classList.remove("hidden");// Hiện item trong phạm vi trang
-      } else {
-        item.classList.add("hidden");// Ẩn item ngoài trang
-      }
+    // Lọc và ẩn toàn bộ
+    filteredCards = allCards.filter(card => {
+      const city = card.getAttribute('data-city');
+      const shouldShow = selectedCity === 'all' || city === selectedCity;
+      card.style.display = shouldShow ? '' : 'none'; // show/hide tạm thời
+      return shouldShow;
     });
-// Ẩn item ngoài trang
-    Array.from(pagination.children).forEach(li => li.classList.remove("active"));
-    const pageLink = pagination.querySelector(`li[data-page="${page}"]`);
-    if (pageLink) pageLink.classList.add("active");
+  }
 
-    currentPage = page;
-    updateArrowStates();// Cập nhật trạng thái mũi tên
-  }
- // Hàm cập nhật trạng thái mũi tên « và »
-  function updateArrowStates() {
-    pagination.querySelector("li[data-page='prev']").classList.toggle("disabled", currentPage === 1);
-    pagination.querySelector("li[data-page='next']").classList.toggle("disabled", currentPage === Math.ceil(filteredItems.length / itemsPerPage));
-  }
-// Hàm tạo giao diện phân trang
-  function createPagination() {
-  pagination.innerHTML = ""; // Xóa các nút trang cũ
-  const totalPages = Math.max(1, Math.ceil(filteredItems.length / itemsPerPage)); 
-  // Dù có ít hơn 6 sự kiện, vẫn đảm bảo ít nhất có 1 trang
+  function paginateEvents(page) {
+    const totalPages = Math.ceil(filteredCards.length / EVENTS_PER_PAGE);
+    currentPage = Math.max(1, Math.min(page, totalPages));
 
-// Nút « Prev
-    const prev = document.createElement("li");
-    prev.textContent = "«";
-    prev.setAttribute("data-page", "prev");
-    if (currentPage === 1 || totalPages === 1) {
-    prev.classList.add("disabled"); // Vô hiệu hóa nếu đang ở trang 1 hoặc chỉ có 1 trang
-  }
-    prev.addEventListener("click", () => {
-      if (currentPage > 1) showPage(currentPage - 1);
+    filteredCards.forEach((card, index) => {
+      const start = (currentPage - 1) * EVENTS_PER_PAGE;
+      const end = currentPage * EVENTS_PER_PAGE;
+      card.style.display = (index >= start && index < end) ? 'block' : 'none';
     });
-    pagination.appendChild(prev);
-// Tạo các số trang
-    for (let i = 1; i <= totalPages; i++) {
-      const li = document.createElement("li");
-      li.textContent = i;
-      li.setAttribute("data-page", i);
-      if (i === currentPage) li.classList.add("active");
-      li.addEventListener("click", () => showPage(i));
-      pagination.appendChild(li);
-    }
-// Nút » Next
-    const next = document.createElement("li");
-    next.textContent = "»";
-    next.setAttribute("data-page", "next");
-     // Nếu chỉ có 1 trang hoặc đang ở cuối → disable
-    if (currentPage === totalPages || totalPages === 1) {
-       next.classList.add("disabled");
-    }
-    next.addEventListener("click", () => {
-      if (currentPage < totalPages) showPage(currentPage + 1);
-    });
-    pagination.appendChild(next);
+
+    updatePaginationControls(totalPages);
   }
-  // Khởi tạo lần đầu khi trang vừa load
-  createPagination();
-  showPage(1);
-});
+
+  function updatePaginationControls(totalPages) {
+  const pagination = document.getElementById('pagination');
+  pagination.innerHTML = '';
+
+  // Nút Prev
+  const prev = document.createElement('li');
+  prev.innerHTML = `<button type="button" ${currentPage === 1 ? 'disabled' : ''} onclick="paginateEvents(${currentPage - 1})">«</button>`;
+  pagination.appendChild(prev);
+
+  // Các nút số trang
+  for (let i = 1; i <= totalPages; i++) {
+    const pageBtn = document.createElement('li');
+    pageBtn.innerHTML = `<button type="button" class="${i === currentPage ? 'active' : ''}" onclick="paginateEvents(${i})">${i}</button>`;
+    pagination.appendChild(pageBtn);
+  }
+
+  // Nút Next
+  const next = document.createElement('li');
+  next.innerHTML = `<button type="button" ${currentPage === totalPages || totalPages === 0 ? 'disabled' : ''} onclick="paginateEvents(${currentPage + 1})">»</button>`;
+  pagination.appendChild(next);
+}
+  function filterAndPaginate() {
+    filterEvents();
+    paginateEvents(1);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('citySelect').addEventListener('change', filterAndPaginate);
+    filterAndPaginate();
+  });

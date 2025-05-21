@@ -186,26 +186,31 @@ main {
   padding: 0;
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 
-.pagination li {
+.pagination li > button {
   background-color: #f0f0f0;
   padding: 10px 15px;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
   user-select: none;
+  border: none;
+  min-width: 40px;
+  text-align: center;
 }
 
-.pagination li:hover {
+.pagination li > button:hover {
   background-color: #ccc;
 }
 
-.pagination li.active {
+.pagination li > button.active {
   background-color: #007BFF;
   color: #fff;
 }
-.pagination li.disabled {
+
+.pagination li > button:disabled {
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.9;
 }
