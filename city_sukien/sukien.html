@@ -118,42 +118,43 @@
 </div>
 
 <!-- List loại sự kiện -->
-<div class="section">
-    <img src="https://img.icons8.com/emoji/452/musical-note-emoji.png" alt="Ca nhạc">
+<div class="section-container">
+  <div class="section ">
+    <img src="../video/music.gif" alt="Ca nhạc">
     <div class="text-content">
-      <a href="ca-nhac.html"><h2>CA NHẠC</h2></a>
+      <a href="ca-nhac.html"><h2>CA NHẠC - LIVE SHOWS</h2></a>
       <p>Cháy hết mình với những đêm nhạc sôi động. Các buổi biểu diễn từ nghệ sĩ hàng đầu, đầy cảm hứng và năng lượng. Cùng bạn bè tận hưởng không khí lễ hội âm nhạc độc đáo.</p>
       <a href="ca-nhac.html"><button>KHÁM PHÁ THÊM</button></a>
     </div>
   </div>
 
   <div class="section">
-    <img src="https://img.icons8.com/color/452/paint-palette.png" alt="Văn hóa nghệ thuật">
+    <img src="../video/culture.gif" alt="Văn hóa nghệ thuật">
     <div class="text-content">
-      <a href="vanhoa-nghethuat.html"><h2>VĂN HÓA NGHỆ THUẬT</h2></a>
+      <a href="vanhoa-nghethuat.html"><h2>VĂN HÓA - NGHỆ THUẬT</h2></a>
       <p>Thưởng thức tinh hoa nghệ thuật từ những triển lãm, buổi biểu diễn truyền thống và hiện đại. Một không gian giao thoa giữa sáng tạo và cảm xúc nghệ thuật.</p>
       <a href="vanhoa-nghethuat.html"><button>KHÁM PHÁ THÊM</button></a>
     </div>
   </div>
 
   <div class="section">
-    <img src="https://img.icons8.com/color/452/training.png" alt="Workshop">
+    <img src="../images/workshop/workshop.png" alt="Workshop">
     <div class="text-content">
-      <a href="workshop..html"><h2>WORKSHOP</h2></a>
+      <a href="workshop..html"><h2>GIÁO DỤC - WORKSHOP</h2></a>
       <p>Học hỏi và phát triển bản thân qua các buổi workshop hấp dẫn về công nghệ, kỹ năng mềm, sáng tạo... Cơ hội kết nối và trải nghiệm thực tế đầy bổ ích.</p>
       <a href="workshop..html"><button>KHÁM PHÁ THÊM</button></a>
     </div>
   </div>
 
   <div class="section">
-    <img src="https://img.icons8.com/football" alt="Thể thao">
+    <img src="../images/sport/sport.png" alt="Thể thao">
     <div class="text-content">
       <a href="thethao.html"><h2>THỂ THAO</h2></a>
       <p>Bùng nổ năng lượng tại các giải đấu, hoạt động thể thao phong phú cho mọi lứa tuổi. Cùng nhau rèn luyện sức khỏe và chinh phục thử thách trên sân chơi.</p>
       <a href="thethao.html"><button>KHÁM PHÁ THÊM</button></a>
     </div>
   </div>
-  
+</div>
 <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
@@ -217,33 +218,29 @@
   });
 </script>
 
-<!-- Hiện chữ -->
- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll(".section");
+<!-- Hiện section -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll(".section");
 
-    function revealOnScroll() {
-      let delay = 0;
+  function revealOnScroll() {
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
 
-      sections.forEach((section, index) => {
-        if (section.classList.contains("visible")) return;
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        section.classList.add("show");
+        section.classList.add("visible"); // để hiện .text-content nữa
+      }
+    });
+  }
 
-        const rect = section.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          setTimeout(() => {
-            section.classList.add("visible");
-          }, delay);
-          delay += 200; // hiệu ứng lần lượt
-        }
-      });
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-  });
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // chạy khi vừa tải
+});
 </script>
+
+
 
 
 <script src="../js/learn.js"></script>
