@@ -46,7 +46,7 @@
   <a href="index.html">TRANG CHỦ</a>
 
   <div class="dropdown">
-    <a href="city_sukien/Ha-noi.html" class="city-link">THÀNH PHỐ</a>
+    <a href="city.html" class="city-link">THÀNH PHỐ</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content" id="cityMenu">
         <div class="dropdown-region">
@@ -86,7 +86,7 @@
   </div>
 
   <div class="dropdown">
-    <a href="#hot" class="city-link">SỰ KIỆN</a>
+    <a href="sukien.html" class="city-link">SỰ KIỆN</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content sub">
         <div class="dropdown-region">
@@ -147,10 +147,11 @@
 </div>
 <script src="../js/slider.js"></script>
 </div>
+
+<div id="recommended-events">
 <div class="featured-events-header">
     <h2 id="culture">Dành cho bạn</h2>
-  </div>
-<div id="recommended-events">
+ 
       <!-- Bộ lọc thành phố  -->
   <div id="cityFilter">
     <!--<label for="citySelect">Chọn thành phố:</label>-->
@@ -162,26 +163,8 @@
 
     </select>
   </div>
-  <script>
-    // Lọc sự kiện theo thành phố
-document.addEventListener('DOMContentLoaded', function () {
-  const citySelect = document.getElementById('citySelect');
-  const eventCards = document.querySelectorAll('.event-card');
-
-  citySelect.addEventListener('change', function () {
-    const selectedCity = this.value;
-
-    eventCards.forEach(card => {
-      const city = card.getAttribute('data-city');
-      const shouldShow = selectedCity === 'all' || city === selectedCity;
-      card.style.display = shouldShow ? 'block' : 'none';
-    });
-  });
-});
-createPagination();
-showPage(1);
-  </script>
   <script src="../js/filter.js"></script>
+</div> 
 <div class="event-list">
     <div class="event-card" data-city="hcm">
   <a href="../chitiet_su_kien/Nhà Hát Kịch IDECAF Lệ Chi Viên (Bí Mật Vườn Lệ Chi).html" class="link">
@@ -311,13 +294,13 @@ showPage(1);
     <!-- Cột 3: Chính sách -->
     <div class="footer-column">
       <p><strong>Về chúng tôi</strong></p>
-      <p><a href="QuyCheHoatDong.html">Quy chế hoạt động</a></p>
-      <p><a href="CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
-      <p><a href="CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
-      <p><a href="ChinhSachBaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
-      <p><a href="CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
-      <p><a href="DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
-      <p><a href="PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
+      <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
     </div>
   </div>
 </footer>
@@ -331,7 +314,7 @@ showPage(1);
 <button id="backToTopBtn" title="Lên đầu trang">
   <i class="fas fa-home"></i>
 </button>
-</main>
+
 <script src="../js/learn.js"></script>
 </body>    
 </html>

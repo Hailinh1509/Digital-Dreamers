@@ -4,7 +4,7 @@ const EVENTS_PER_PAGE = 6;
 
   function filterEvents() {
     const selectedCity = document.getElementById('citySelect').value;
-    const allCards = Array.from(document.querySelectorAll('#recomrecom.event-card'));
+    const allCards = Array.from(document.querySelectorAll('.event-card'));
 
     // Lọc và ẩn toàn bộ
     filteredCards = allCards.filter(card => {

@@ -2,7 +2,6 @@ a {
   text-decoration: none;
   color: inherit; /* Thừa hưởng màu chữ từ parent */
 }
-
 /* main */
 main {
   padding: 20px 50px; /* Thêm padding cho phần main */

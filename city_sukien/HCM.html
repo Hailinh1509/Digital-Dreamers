@@ -48,7 +48,7 @@
   <a href="index.html">TRANG CHỦ</a>
 
   <div class="dropdown">
-    <a href="city_sukien/Ha-noi.html" class="city-link">THÀNH PHỐ</a>
+    <a href="city.html" class="city-link">THÀNH PHỐ</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content" id="cityMenu">
         <div class="dropdown-region">
@@ -88,7 +88,7 @@
   </div>
 
   <div class="dropdown">
-    <a href="#hot" class="city-link">SỰ KIỆN</a>
+    <a href="sukien.html" class="city-link">SỰ KIỆN</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content sub">
         <div class="dropdown-region">
@@ -183,10 +183,11 @@
   </a>
 </div>
 </div>
+
+<div id="recommended-events">
 <div class="featured-events-header">
     <h2 id="culture">Dành cho bạn</h2>
-  </div>
-<div id="recommended-events">
+  
 <!-- Bộ lọc thành phố  -->
   <div id="categoryFilter">
     <!--<label for="citySelect">Chọn thành phố:</label>-->
@@ -198,6 +199,7 @@
       <option value="tt">Thể thao</option>
     </select>
   </div>
+</div>
 <div class="event-list">
 <div class="event-card ws" data-category="ws">
   <a href="../chitiet_su_kien/[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM.html" class="link">
@@ -372,7 +374,7 @@
       </div>
   </div>
 </div><!--blog-->
-
+</main>
 <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
@@ -407,13 +409,13 @@
     <!-- Cột 3: Chính sách -->
     <div class="footer-column">
       <p><strong>Về chúng tôi</strong></p>
-      <p><a href="QuyCheHoatDong.html">Quy chế hoạt động</a></p>
-      <p><a href="CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
-      <p><a href="CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
-      <p><a href="ChinhSachBaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
-      <p><a href="CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
-      <p><a href="DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
-      <p><a href="PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
+      <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
     </div>
   </div>
 </footer>
@@ -428,7 +430,7 @@
   <i class="fas fa-home"></i>
 </button>
 
-</main>
+
 <script>
   const track = document.querySelector('.slider-track');
   const dots = document.querySelectorAll('.dot');
