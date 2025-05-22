@@ -66,30 +66,13 @@
 }
 
 .price {
-  font-size: 1.3em;
+  font-size: 1.5em;
   font-weight: bold;
   margin: 0px;
+
+
 }
 
-.buy-button {
-  background-color: #fcd3a3;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-  width: auto;
- 
-}
-
-.buy-button:hover {
-  background-color: #f5ac25;
-  text-decoration: none;
-}
 
 .banner-left {
     width: 65%;
@@ -119,7 +102,7 @@
         font-size: 1.3em;
     }
     .price {
-        font-size: 1.1em;
+        font-size: 1.5em;
     }
 }
 
