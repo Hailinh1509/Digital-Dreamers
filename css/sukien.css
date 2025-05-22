@@ -1,41 +1,69 @@
+    .section-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px; /* thêm dòng này để thu hẹp margin ngoài */
+      gap: 20px;
+    }
+
     .section {
       display: flex;
       align-items: center;
-      justify-content: space-between;                        
+      justify-content: center;
+      gap: 40px; 
+      border-radius: 12px;
+      box-shadow: 0 5px 6px rgba(248, 182, 182, 0.795);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
     }
 
-    .section:nth-child(3) {
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section:nth-child(1) {
       background-image: url(https://www.highlandscoffee.com.vn/vnt_upload/product/04_2018/menu-FREEZE.jpg);
     }
 
-    .section:nth-child(4) {
-      background: linear-gradient(135deg, #e5c2c8, #d6ebd7);
+    .section:nth-child(2) {
+      background: linear-gradient(135deg, #e5f0e490, #ebebd6);
       flex-direction: row-reverse;
     }
-    .section:nth-child(5) {
-      background: linear-gradient(135deg, #d6d2ec, #efc3bf);
+    .section:nth-child(3) {
+      background: linear-gradient(135deg, #e4cfcdbe, #cae4edbd);
     }
-    .section:nth-child(6) {
-      background: linear-gradient(135deg, #f4dbc1, #e8bebb);
+    .section:nth-child(4) {
+      background: linear-gradient(135deg, #f7e8d8c0, #deb3b0c4);
       flex-direction: row-reverse;
     }
 
     .section img {
-      width: 250px;
+      width: 300px;
       height: auto;
       background: none;
       align-items: center;
-      margin: 0 40px; 
+      margin: 0 20px; 
     }
 
 
     .text-content {
       max-width: 600px;
-      margin: 60px;
+      margin: 40px;
       opacity: 0;
       transform: translateY(30px);
       transition: all 0.6s ease-out;
       transition-delay: 0.2s;
+    }
+
+    .section:nth-child(1) .text-content,
+    .section:nth-child(3) .text-content {
+      text-align: right;
+    }
+
+    .section:nth-child(2) .text-content,
+    .section:nth-child(4) .text-content {
+      text-align: left;
     }
 
     /* Khi hiện ra */
@@ -69,5 +97,17 @@
       font-weight: bold;
     }
     .text-content button:hover {
-      background-color: rgb(79, 154, 113);
+      background-color: rgb(130, 165, 202);
     }
+
+    @media (max-width: 768px) {
+    .section img {
+      display: none; /* ẩn ảnh khi màn hình nhỏ */
+    }
+
+    .text-content {
+      margin: 20px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
