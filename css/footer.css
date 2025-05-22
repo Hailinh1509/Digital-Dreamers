@@ -244,8 +244,9 @@
 
 /* Nút Zalo */
 #zaloBtn {
-  bottom: 70px; /* Cao hơn nút lên đầu trang */
+  bottom: 70px; 
   background-color: #0078ff; /* Màu xanh Zalo */
+  text-decoration: none;
 }
 
 #zaloBtn:hover {
