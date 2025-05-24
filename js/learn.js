@@ -132,20 +132,7 @@ function checkEmail() {
     });
   });
 
-// Chữ hiện trên video
-document.addEventListener("DOMContentLoaded", function () {
-  const text = "Khám phá những sự kiện tuyệt vời khắp Việt Nam";
-  const words = text.split(" ");
-  const overlay = document.getElementById("video");
 
-  words.forEach((word, index) => {
-    const span = document.createElement("span");
-    span.className = "word";
-    span.style.animationDelay = `${index * 0.1}s`; // tạo hiệu ứng rơi cách nhau
-    span.textContent = word;
-    overlay.appendChild(span);
-  });
-});
 
 
 

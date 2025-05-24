@@ -111,7 +111,8 @@
   
 @media (max-width: 768px) {
   .blog {
-    flex-direction: column; /* Xếp dọc khi thu nhỏ */
+    flex-direction: column; 
+    margin: 0 20px;
   }
 
   .main-content,
