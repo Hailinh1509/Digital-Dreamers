@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Trang liên hệ - EventVista </title>
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,13 +13,8 @@
     <title>Thông tin tài khoản - EventVista</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            color: #000;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
             flex-direction: column;
         }
         .profile-container {
@@ -43,7 +38,7 @@
             height: 100px;
             border-radius: 50%;
             margin-bottom: 10px;
-            background-image: url('images/6.jpg');
+            background-image: url('../images/6.jpg');
             margin: 20px auto 10px;
             background-size: cover;
             position: center;
@@ -87,18 +82,19 @@
         .gender-options input[type="radio"] {
             margin: 0;
         }
-        button {
+        .complete {
             width: 100%;
             padding: 10px;
-            background-color: #28a745;
+            background-color: #3928a7;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
         }
-        button:hover {
-            background-color: #218838;
+        
+        .complete:hover {
+          background-color: #0c6143; 
         }
     </style>
 </head>
@@ -119,8 +115,8 @@
   <div class="navigation">
     <header class="main-header">
         <div class="logo">
-            <a href="index.html">
-                <img src="images/LOGO_main.png" alt="EventVista">
+            <a href="../index.html">
+                <img src="../images/LOGO_main.png" alt="EventVista">
             </a>
         </div>
 
@@ -129,18 +125,18 @@
         </div>
 
         <nav class="main-nav">
-  <a href="index.html">TRANG CHỦ</a>
+  <a href="../index.html">TRANG CHỦ</a>
 
   <div class="dropdown">
-    <a href="city_sukien/city.html" class="city-link">THÀNH PHỐ</a>
+    <a href="../city_sukien/city.html" class="city-link">THÀNH PHỐ</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content" id="cityMenu">
         <div class="dropdown-region">
           <strong>MIỀN BẮC</strong>
           <div class="img-center">
-            <img src="images/city/Hanoi.png" alt="Miền Bắc" class="region-img">
+            <img src="../images/city/Hanoi.png" alt="Miền Bắc" class="region-img">
             <div class="overlay"></div>
-            <div class="image-text"><a href="city_sukien/Ha-noi.html">HA NOI</a></div>
+            <div class="image-text"><a href="../city_sukien/Ha-noi.html">HA NOI</a></div>
           </div>
         <a href="#">Hạ Long</a>
         <a href="#">Thái Bình</a>
@@ -149,7 +145,7 @@
       <div class="dropdown-region">
         <strong>MIỀN TRUNG</strong>
           <div class="img-center">
-            <img src="images/city/Danang.png" alt="Miền Trung" class="region-img">
+            <img src="../images/city/Danang.png" alt="Miền Trung" class="region-img">
             <div class="overlay"></div>
             <div class="image-text"><a href="#">DA NANG</a></div>
           </div>
@@ -160,9 +156,9 @@
       <div class="dropdown-region">
         <strong>MIỀN NAM</strong>
           <div class="img-center">
-            <img src="images/city/hcm.png" alt="Miền Nam" class="region-img">
+            <img src="../images/city/hcm.png" alt="Miền Nam" class="region-img">
             <div class="overlay"></div>
-            <div class="image-text"><a href="city_sukien/HCM.html">HO CHI MINH</a></div>
+            <div class="image-text"><a href="../city_sukien/HCM.html">HO CHI MINH</a></div>
           </div>
         <a href="#">Bình Thuận</a>
         <a href="#">Cần Thơ</a>
@@ -172,19 +168,19 @@
   </div>
 
   <div class="dropdown">
-    <a href="../index.html" class="city-link">SỰ KIỆN</a>
+    <a href="../city_sukien/sukien.html" class="city-link">SỰ KIỆN</a>
     <button class="arrow-btn">▼</button>
       <div class="dropdown-content sub">
         <div class="dropdown-region">
-          <a href="city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
-          <a href="city_sukien/vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
-          <a href="city_sukien/workshop..html"> 🎓 Giáo dục - Workshop</a>
-          <a href="city_sukien/thethao.html"> ⚽ Thể thao</a>
+          <a href="../city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
+          <a href="../city_sukien/vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
+          <a href="../city_sukien/workshop..html"> 🎓 Giáo dục - Workshop</a>
+          <a href="../city_sukien/thethao.html"> ⚽ Thể thao</a>
       </div> 
     </div>
   </div>
   <a href="#">ĐẶT VÉ</a>
-  <a href="TrangLienHe.html">LIÊN HỆ</a>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
 </nav>
 
   <div class="search-wrapper">
@@ -237,13 +233,12 @@
                 <label><input type="radio" name="gender" value="other"> Khác</label>
             </div>
         </div>
-        <button onclick="completeProfile()">Hoàn thành</button>
+        <button class="complete" onclick="completeProfile()">Hoàn thành</button>
     </div>
 </main>
     <script>
         function completeProfile() {
-            // Chuyển hướng đến index.html
-            window.location.href = 'index.html';
+            window.location.href = '../index.html';
         }
     </script>
 
@@ -291,5 +286,7 @@
     </div>
   </div>
 </footer>
+
+<script src="../js/learn.js"></script>
 </body>
 </html>
