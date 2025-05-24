@@ -18,6 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdownContent.classList.toggle('show');
   });
 
+// Đăng xuất
+function confirmLogout() {
+    const confirmResult = confirm("Bạn chắc chắn muốn đăng xuất không?");
+    if (confirmResult) {
+        window.location.href = "../index.html";
+    }
+}
+
+
   // Ẩn dropdown nếu click ngoài
   document.addEventListener('click', function (e) {
     if (!arrowBtn.contains(e.target) && !dropdownContent.contains(e.target)) {

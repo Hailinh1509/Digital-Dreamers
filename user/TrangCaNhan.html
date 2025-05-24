@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Trang liên hệ - EventVista </title>
+    <title>Thông tin cá nhân </title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
@@ -17,6 +17,7 @@
             align-items: center;
             flex-direction: column;
         }
+
         .profile-container {
             background-color: #fff;
             padding: 20px;
@@ -191,14 +192,14 @@
   </div> 
 
     <div class="user-dropdown">
-        <div class="user-icon" id="userIcon">
-            <i class="fa fa-user"></i>
-        </div>
-        <div class="login" id="userMenu">
-            <a href="DangKy_DangNhap.html">Đăng ký</a>
-            <a href="DangKy_DangNhap.html">Đăng nhập</a>
-        </div>
-    </div>
+      <div class="user-icon" id="userIcon">
+          <img src="../images/6.jpg" alt="Avatar" class="avatar-img">
+      </div>
+      <div class="login" id="userMenu">
+          <a href="#">Thông tin cá nhân</a>
+          <a href="#" onclick="confirmLogout()">Đăng xuất</a>
+      </div>
+  </div>
 </header>
 </div>
 
@@ -236,9 +237,10 @@
         <button class="complete" onclick="completeProfile()">Hoàn thành</button>
     </div>
 </main>
+
     <script>
         function completeProfile() {
-            window.location.href = '../index.html';
+            window.location.href = '../Home_After.html';
         }
     </script>
 
