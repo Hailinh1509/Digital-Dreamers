@@ -50,20 +50,21 @@
   }
   
   .slider-dots .dot.active {
-    background: #d7e6f7;
+    background: white;
     opacity: 1;
   }
    
   .sidebar-container {
     flex: 1;
-    max-height: 70vh;
+    max-height: 75vh;
     overflow-y: auto;  
     padding-right: 10px;
     box-sizing: border-box;
   }
   
+  /* Thiết kế thanh cuộn trong blog */
   .sidebar-container::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
   .sidebar-container::-webkit-scrollbar-thumb {
     background-color: #ccc;
@@ -124,5 +125,4 @@
   .article-text {
     padding: 5px 15px;
   }
-
 }

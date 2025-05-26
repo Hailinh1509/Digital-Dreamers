@@ -35,7 +35,6 @@
 .grid a {
   position: relative;
   display: block;
-  text-decoration: none;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -78,18 +77,6 @@
   border-bottom: 1px solid #7b3a3a; 
 }
 
-.partner-slider {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-}
-
-.partner-track {
-  display: inline-block;
-  animation: scroll-left 30s linear infinite;
-}
-
 .partner-item {
   display: inline-block;
   width: 180px;
@@ -97,18 +84,27 @@
   text-align: center;
 }
 
-.partner-item img {
-  width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
+.partner-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
+.partner-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll-left 20s linear infinite;
+}
 
-/* Animation */
+.partner-item img {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Animation dịch chuyển sang trái */
 @keyframes scroll-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);

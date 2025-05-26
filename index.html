@@ -18,6 +18,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+  <!-- Phần intro -->
+<div id="videoIntro">
+  <video id="introVideo" autoplay muted playsinline>
+    <source src="video/intro.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ video.
+  </video>
+</div>
+
+<!-- Nội dung trang chủ -->
+<div id="mainContent" style="display: none;">
   <div class="navbar_1">
     <nav>
       <div class="navbar-inner">
@@ -48,7 +58,6 @@
 
   <div class="dropdown">
     <a href="city_sukien/city.html" class="city-link">THÀNH PHỐ</a>
-    <button class="arrow-btn">▼</button>
       <div class="dropdown-content" id="cityMenu">
         <div class="dropdown-region">
           <strong>MIỀN BẮC</strong>
@@ -88,7 +97,6 @@
 
   <div class="dropdown">
     <a href="city_sukien/sukien.html" class="city-link">SỰ KIỆN</a>
-    <button class="arrow-btn">▼</button>
       <div class="dropdown-content sub">
         <div class="dropdown-region">
           <a href="city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
@@ -511,7 +519,7 @@
             <div class="article-text">
                 <div class="category-heading">VĂN HÓA & NGHỆ THUẬT</div>
                 <div class="article-title">
-                    <a href="https://ticketgo.vn/blog/chill-tha-ga-30-04-tai-ha-noi-tour-dem-van-mieu-roi-nuoc-hoang-thanh-thang-long-mien-phi">Chill Thả Ga 30/04 Tại Hà Nội: Tour Đêm Văn Miếu, Rối Nước Hoàng Thành Thăng Long miễn phí</a>
+                    <a>Chill Thả Ga 30/04 Tại Hà Nội: Tour Đêm Văn Miếu, Rối Nước Hoàng Thành Thăng Long miễn phí</a>
                 </div>
             </div>
             <div class="thumbnail">
@@ -523,7 +531,7 @@
           <div class="article-text">
               <div class="category-heading">GIÁO DỤC & WORKSHOP</div>
               <div class="article-title">
-                  <a href="#">Sự kiện trải nghiệm hành trình khoa cử cùng Galaxy AI hiểu tiếng Việt, tôn vinh tri thức Việt.</a>
+                  <a>Sự kiện trải nghiệm hành trình khoa cử cùng Galaxy AI hiểu tiếng Việt, tôn vinh tri thức Việt.</a>
               </div>
           </div>
           <div class="thumbnail">
@@ -535,7 +543,7 @@
         <div class="article-text">
             <div class="category-heading">GIÁO DỤC & WORKSHOP</div>
             <div class="article-title">
-                <a href="https://ticketgo.vn/blog/chinh-thuc-mo-don-dang-ky-cuoc-thi-product-pioneer-candidate-vong-1-cv-application-the-glacial-dawn">[CHÍNH THỨC] Mở đơn đăng ký cuộc thi PRODUCT PIONEER CANDIDATE - VÒNG 1 (CV APPLICATION): THE GLACIAL DAWN</a>
+                <a>[CHÍNH THỨC] Mở đơn đăng ký cuộc thi PRODUCT PIONEER CANDIDATE - VÒNG 1 (CV APPLICATION): THE GLACIAL DAWN</a>
             </div>
         </div>
         <div class="thumbnail">
@@ -547,7 +555,7 @@
       <div class="article-text">
           <div class="category-heading">HỘI CHỢ & TRIỂN LÃM</div>
           <div class="article-title">
-              <a href="https://ticketgo.vn/blog/trien-lam-art-harmony-a-fusion-of-melodies-and-colors">Triển lãm Art & Harmony - A Fusion of Melodies and Colors</a>
+              <a>Triển lãm Art & Harmony - A Fusion of Melodies and Colors</a>
           </div>
       </div>
       <div class="thumbnail">
@@ -557,9 +565,9 @@
 
         <div class="sidebar-section">
             <div class="article-text">
-                <div class="category-heading">DU LỊCH BỐN PHƯƠNG</div>
+                <div class="category-heading">VĂN HÓA - NGHỆ THUẬT</div>
                 <div class="article-title">
-                    <a href="https://ticketgo.vn/blog/di-dau-choi-o-da-lat-tong-hop-dia-diem-giai-tri-hot-hit-tai-da-lat">Đi đâu chơi ở Đà Lạt - Tổng hợp địa điểm giải trí HOT HIT tại Đà Lạt</a>
+                    <a>Đi đâu chơi ở Đà Lạt - Tổng hợp địa điểm giải trí HOT HIT tại Đà Lạt</a>
                 </div>
             </div>
             <div class="thumbnail">
@@ -571,7 +579,7 @@
           <div class="article-text">
               <div class="category-heading">THỂ THAO & CÔNG NGHỆ</div>
               <div class="article-title">
-                  <a href="https://ticketgo.vn/blog/hanoi-allstyle-jam-vol-5-tournament-summer-dance-battle-ngay-11-05-2025">Hanoi Allstyle Jam Vol 5 Tournament - Summer Dance Battle - Ngày 11/05/2025</a>
+                  <a>Hanoi Allstyle Jam Vol 5 Tournament - Summer Dance Battle - Ngày 11/05/2025</a>
               </div>
           </div>
           <div class="thumbnail">
@@ -583,8 +591,7 @@
         <div class="article-text">
             <div class="category-heading">ÂM NHẠC - MUSIC SHOWS</div>
             <div class="article-title">
-                <a href="https://ticketgo.vn/blog/tram-am-nhac-so-6-dem-nhac-thang-4-co-dien-lang-man-va-hien-dai-ngay-27-04-2025">
-                  Trạm âm nhạc số 6 - Đêm nhạc tháng 4 - Cổ điển, lãng mạn và hiện đại - Ngày 27.04.2025</a>
+                <a>Trạm âm nhạc số 6 - Đêm nhạc tháng 4 - Cổ điển, lãng mạn và hiện đại - Ngày 27.04.2025</a>
             </div>
         </div>
         <div class="thumbnail">
@@ -596,7 +603,7 @@
       <div class="article-text">
           <div class="category-heading">VĂN HÓA & NGHỆ THUẬT</div>
           <div class="article-title">
-              <a href="https://ticketgo.vn/blog/lien-hoan-yosakoi-viet-nam-2025">LIÊN HOAN YOSAKOI VIỆT NAM 2025</a>
+              <a>LIÊN HOAN YOSAKOI VIỆT NAM 2025</a>
           </div>
       </div>
       <div class="thumbnail">
@@ -612,15 +619,15 @@
   <p>Tag your best <span>#LiveFullyinVietnam</span> moments on Instagram</p>
 
   <div class="grid">
-    <a href="https://www.instagram.com/p/abc123" target="_blank">
+    <a href="https://www.instagram.com/p/DJfvY8dvQ6v/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
       <img src="images/story/story1.png" alt="Vietnam moment 1" class="main-img">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="insta-icon">
     </a>
-    <a href="https://www.instagram.com/p/def456" target="_blank">
+    <a href="https://www.instagram.com/p/DKA1YsWKtKA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">
       <img src="images/story/story2.png"  class="main-img">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="insta-icon">
     </a>
-    <a href="https://www.instagram.com/p/ghi789" target="_blank" class="full-width">
+    <a href="https://www.instagram.com/p/DCjtyevTSUh/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" class="full-width">
       <img src="images/story/story4.png" alt="Concert T.O.P" class="main-img">
       <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="insta-icon">
     </a>
@@ -628,27 +635,26 @@
 </div>
  
   <!-- Partner -->
-  <div class="partner-section">
-    <div class="section-intro">
-      Chúng tôi vô cùng trân trọng sự đồng hành và tin tưởng từ các đối tác chiến lược. <br> Sự hợp tác quý báu này đóng vai trò then chốt trong việc mang đến những trải nghiệm sự kiện tuyệt vời và đa dạng cho cộng đồng.
+<div class="partner-section">
+  <div class="section-intro">
+    Chúng tôi vô cùng trân trọng sự đồng hành và tin tưởng từ các đối tác chiến lược. <br>
+    Sự hợp tác quý báu này đóng vai trò then chốt trong việc mang đến những trải nghiệm sự kiện tuyệt vời và đa dạng cho cộng đồng.
   </div>
-    <div class="partner-slider">
-      <div class="partner-track">
-        <div class="partner-item"><img src="images/partner/partner1.png" alt="Partner 1"></div>
-        <div class="partner-item"><img src="images/partner/partner2.png" alt="Partner 2"></div>
-        <div class="partner-item"><img src="images/partner/partner3.png" alt="Partner 3"></div>
-        <div class="partner-item"><img src="images/partner/partner4.png" alt="Partner 4"></div>
-        <div class="partner-item"><img src="images/partner/partner5.png" alt="Partner 4"></div>
-        <!-- Nhân đôi để chạy liên tục -->
-        <div class="partner-item"><img src="images/partner/partner1.png" alt="Partner 4"></div>
-        <div class="partner-item"><img src="images/partner/partner2.png" alt="Partner 4"></div>
-        <div class="partner-item"><img src="images/partner/partner3.png" alt="Partner 4"></div>
-        <div class="partner-item"><img src="images/partner/partner4.png" alt="Partner 4"></div>
-        <div class="partner-item"><img src="images/partner/partner5.png" alt="Partner 4"></div>
-      </div>
+
+  <div class="partner-slider">
+    <div class="partner-track" id="partnerTrack">
+      <div class="partner-item"><img src="images/culture/Nhà Hát Kịch IDECAF Lệ Chi Viên (Bí Mật Vườn Lệ Chi)/ban_to_chuc.png"></div>
+      <div class="partner-item"><img src="images/partner/partner1.png" alt="Partner 1"></div>
+      <div class="partner-item"><img src="images/partner/partner2.png" alt="Partner 2"></div>
+      <div class="partner-item"><img src="images/partner/partner3.png" alt="Partner 3"></div>
+      <div class="partner-item"><img src="images/partner/partner4.png" alt="Partner 4"></div>
+      <div class="partner-item"><img src="images/partner/partner5.png" alt="Partner 5"></div>
+      <div class="partner-item"><img src="images/music/[Hà Nội] Những Thành Phố Mơ Màng Summer 2025/ban_to_chuc.jpg"></div>
     </div>
   </div>
-  
+</div>
+
+
 <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
@@ -694,72 +700,22 @@
   </div>
 </footer>
 
-<!-- Nút Zalo với chữ -->
-<a id="zaloBtn" href="https://zalo.me/g/vpdgks851" target="_blank" title="Liên hệ Zalo">
-  Zalo
-</a>
+  <!-- Nút Zalo với chữ -->
+  <a id="zaloBtn" href="https://zalo.me/g/vpdgks851" target="_blank" title="Liên hệ Zalo">
+    Zalo
+  </a>
 
-<!-- Nút lên đầu trang -->
-<button id="backToTopBtn" title="Lên đầu trang">
-  <i class="fas fa-home"></i>
-</button>
+  <!-- Nút lên đầu trang -->
+  <button id="backToTopBtn" title="Lên đầu trang">
+    <i class="fas fa-home"></i>
+  </button>
 
-<script>
-  const track = document.querySelector('.slider-track');
-  const dots = document.querySelectorAll('.dot');
-  const totalSlides = dots.length;
-  let currentIndex = 0;
-
-  function goToSlide(index) {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-  }
-
-  function autoSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    goToSlide(currentIndex);
-  }
-
-  setInterval(autoSlide, 3000); 
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const circles = document.querySelectorAll('.circle');
-    const galleries = document.querySelectorAll('.gallery-group');
-    let currentIndex = 0;
-    let intervalId;
-
-    function showGallery(index) {
-      galleries.forEach(g => g.style.display = 'none');
-      circles.forEach(c => c.classList.remove('active'));
-
-      galleries[index].style.display = 'flex';
-      circles[index].classList.add('active');
-      currentIndex = index;
-    }
-
-    function nextGallery() {
-      let nextIndex = (currentIndex + 1) % galleries.length;
-      showGallery(nextIndex);
-    }
-
-    intervalId = setInterval(nextGallery, 5000);
-
-    circles.forEach(circle => {
-      circle.addEventListener('click', () => {
-        const index = parseInt(circle.dataset.index);
-        showGallery(index);
-        clearInterval(intervalId);
-        intervalId = setInterval(nextGallery, 2000);
-      });
-    });
-
-    showGallery(0);
-  });
-</script>
-
+</div>
+<!-- JS riêng của header - footer -->
 <script src="js/learn.js"></script>
+
+<!-- JS chỉ riêng trang Home -->
+<script src="js/home.js"></script>
+
 </body>
 </html>

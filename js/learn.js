@@ -3,8 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const mainNav = document.querySelector(".main-nav");
 
-  hamburger.addEventListener("click", () => {
+  hamburger.addEventListener("click", (e) => {
+    e.stopPropagation(); // Ngăn không cho sự kiện lan ra ngoài
     mainNav.classList.toggle("active");
+  });
+
+  // Ngăn click trong menu làm ẩn menu
+  mainNav.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // Click ngoài menu -> ẩn menu
+  document.addEventListener("click", () => {
+    mainNav.classList.remove("active");
   });
 });
 
@@ -33,44 +44,6 @@ function confirmLogout() {
       dropdownContent.classList.remove('show');
     }
   });
-});
-
-// Hiện lên khi cuộn đến và ẩn khi cuộn xuống
-document.addEventListener("DOMContentLoaded", function () {
-  const info = document.querySelector(".image-info");
-
-  function handleScroll() {
-    const rect = info.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    if (rect.top < windowHeight && rect.bottom > 0) {
-      info.classList.add("visible");
-    } else {
-      info.classList.remove("visible");
-    }
-  }
-
-  window.addEventListener("scroll", handleScroll);
-  handleScroll(); 
-});
-
-// Hiện lên khi cuộn đến (1 lần duy nhất)
-document.addEventListener("DOMContentLoaded", function () {
-  const elements = document.querySelectorAll(".reveal-once");
-
-  function revealOnScroll() {
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        el.classList.add("visible");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
 });
 
 // Email Footer
