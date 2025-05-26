@@ -109,15 +109,17 @@
     </div>
   </div> 
 
-  <div class="user-dropdown">
-      <div class="user-icon" id="userIcon">
-          <img src="images/6.jpg" alt="Avatar" class="avatar-img">
-      </div>
-      <div class="login" id="userMenu">
-          <a href="user/TrangCaNhan.html">Thông tin cá nhân</a>
-          <a href="#" onclick="confirmLogout()">Đăng xuất</a>
-      </div>
-  </div>
+<div class="user-dropdown">
+    <div class="user-icon" id="userIcon">
+        <!-- Thay icon bằng ảnh -->
+        <img src="images/6.jpg" alt="Avatar" class="avatar-img">
+    </div>
+    <div class="login" id="userMenu">
+        <a href="user/TrangCaNhan.html">Thông tin cá nhân</a>
+        <a href="#" onclick="confirmLogout()">Đăng xuất</a>
+    </div>
+</div>
+
 </header>
 </div>
 
@@ -704,6 +706,7 @@
   <i class="fas fa-home"></i>
 </button>
 
+<!-- Chuyển slide -->
 <script>
   const track = document.querySelector('.slider-track');
   const dots = document.querySelectorAll('.dot');
@@ -758,6 +761,16 @@
 
     showGallery(0);
   });
+</script>
+
+<!-- Đăng xuất -->
+<script>
+  function confirmLogout() {
+      const confirmResult = confirm("Bạn chắc chắn muốn đăng xuất không?");
+      if (confirmResult) {
+          window.location.href = "index.html";
+      }
+  }
 </script>
 
 <script src="js/learn.js"></script>

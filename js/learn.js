@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function confirmLogout() {
     const confirmResult = confirm("Bạn chắc chắn muốn đăng xuất không?");
     if (confirmResult) {
-        window.location.href = "../index.html";
+        window.location.href = "index.html";
     }
 }
 
