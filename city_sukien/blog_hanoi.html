@@ -13,8 +13,6 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Font viết tay mềm mại -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
   <style>
@@ -47,21 +45,100 @@
       text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
       pointer-events: none;
     }
-main {
-  display: flex;
+main{
+  max-width:1200px; 
+   margin: 0 auto; 
 }
-
-.ad {
-  flex: 1; /* chiếm 1 phần */
-  background-color: #f2f2f2; /* màu nền để dễ nhìn */
-}
-
 .content {
-  flex: 2; /* chiếm 2 phần */
-  padding: 20px;
+
+  text-align: justify;
 }
-.content img{
-    padding:20px;
+.content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+.blog-sidebar {
+    margin-top: 20px; 
+    height: auto; /* Đảm bảo không có chiều cao cố định */
+}
+
+/* Áp dụng các style màu nền và padding cho div mới */
+.sidebar-content {
+    padding: 15px;
+    background-color: #f8f9fa; /* Màu nền xám bạn muốn */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: auto; /* Đảm bảo nó chỉ cao bằng nội dung */
+}
+
+.sidebar-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #dc3545; /* Màu đỏ cho tiêu đề, giống biểu tượng máy bay giấy */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eee; /* Đường gạch dưới tiêu đề */
+    padding-bottom: 10px;
+}
+
+.sidebar-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #dc3545; 
+    transform: rotate(45deg); /* Xoay để tạo hình máy bay */
+    margin-right: 10px;
+    position: relative;
+    top: -5px; 
+}
+
+.related-posts .post-item {
+    display: flex;
+    margin-bottom: 15px;
+     align-items: center; 
+}
+
+.related-posts .post-item img {
+    width: 80px; 
+    height: 60px; 
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn và không bị méo */
+    margin-right: 10px;
+    border-radius: 3px; /* Bo góc ảnh */
+}
+
+.related-posts .post-item .post-content {
+    flex-grow: 1;
+}
+
+.related-posts .post-item a {
+    font-size: 0.95em;
+    color: #333; 
+    text-decoration: none;
+    line-height: 1.4;
+    display: block; /* Đảm bảo liên kết chiếm toàn bộ chiều rộng */
+}
+
+.related-posts .post-item a:hover {
+    color: #dc3545; 
+    
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
 }
   </style>
 </head>
@@ -97,7 +174,6 @@ main {
 
   <div class="dropdown">
     <a href="city.html" class="city-link">THÀNH PHỐ</a>
-    <button class="arrow-btn">▼</button>
       <div class="dropdown-content" id="cityMenu">
         <div class="dropdown-region">
           <strong>MIỀN BẮC</strong>
@@ -137,7 +213,6 @@ main {
 
   <div class="dropdown">
     <a href="sukien.html" class="city-link">SỰ KIỆN</a>
-    <button class="arrow-btn">▼</button>
       <div class="dropdown-content sub">
         <div class="dropdown-region">
           <a href="../city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
@@ -163,8 +238,8 @@ main {
         <i class="fa fa-user"></i>
     </div>
     <div class="login" id="userMenu">
-        <a href="../DangKy_DangNhap.html">Đăng ký</a>
-        <a href="../DangKy_DangNhap.html">Đăng nhập</a>
+        <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+        <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
     </div>
 </div>
 </header>
@@ -176,17 +251,16 @@ main {
 </div>
 <!--nội dung blog-->
 <main>
-<div class="ad">
-
-</div>
-<div class="content">
-<p>Hà Nội – thủ đô ngàn năm văn hiến, không chỉ là trung tâm chính trị, kinh tế, văn hóa của Việt Nam
+  <div class="row">
+<!--<div class="content">-->
+  <div class="col-12 col-md-9 content" style="padding-top:10px;">
+<p style="font-style: italic;">Hà Nội – thủ đô ngàn năm văn hiến, không chỉ là trung tâm chính trị, kinh tế, văn hóa của Việt Nam
      mà còn là kho tàng lịch sử với nhiều di tích cổ kính và giàu giá trị văn hóa. 
      Những di tích lịch sử Hà Nội là những chứng nhân của thời gian, phản ánh những giai đoạn thăng trầm và những câu chuyện hào hùng của dân tộc. 
 </p>
 
-<h2>Danh sách những di tích lịch sử Hà Nội</h2>
-<h3>Hoàng thành Thăng Long </h3>
+<h2 style="color:rgb(28,88,133);"><strong>Danh sách những di tích lịch sử Hà Nội</strong></h2>
+<h3><strong>Hoàng thành Thăng Long </strong></h3>
 <p><strong>Hoàng Thành Thăng Long</strong> là khu <strong>di tích lịch sử Hà Nội</strong> được xây dựng từ thế kỷ thứ VII, 
     dưới triều đại Đinh-Tiền Lê sau đó phát triển mạnh ở thời Lý, Trần, Lê và triều Nguyễn. 
     Đây là quần thể công trình kiến trúc đồ sộ và là di tích quan trọng bậc nhất trong hệ thống các di tích Việt Nam. 
@@ -279,8 +353,79 @@ Việc thăm lăng không chỉ là một hoạt động du lịch mà còn là 
 Ngoài ra, nhà thờ cũng là một điểm đến du lịch hấp dẫn, thu hút nhiều du khách trong và ngoài nước. Với vẻ đẹp kiến trúc ấn tượng và không gian yên tĩnh, 
 nhà thờ là nơi lý tưởng để tìm hiểu về lịch sử và văn hóa của Hà Nội.</p>
 </div>
+<!--</div>
+<div class="ad">-->
+  <div class="col-12 col-md-3 blog-sidebar">
+            <div class="sidebar-content">
+    <div class="related-posts">
+        <h3 class="sidebar-title">
+            <span class="sidebar-icon"></span> TIN LIÊN QUAN
+        </h3>
+        <div class="post-item">
+            <img src="../images/blog/amthuchanoi.jpg" alt="ẩm thực hà nội">
+            <div class="post-content">
+                <a>Hương vị Hà Nội xưa: Đặc sản và câu chuyện đằng sau</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/hanoi5.jpg" alt="làng nghề">
+            <div class="post-content">
+                <a href="#">Sắc màu nghề truyền thống: Chuyện kể từ làng nghề Hà Nội</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/hn1.jpg" alt="phố cổ">
+            <div class="post-content">
+                <a href="#">Khám phá góc phố cổ: Nơi thời gian ngừng lại ở Hà Nội</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/hanoivedem.jpg" alt="ban đêm hà nộinội">
+            <div class="post-content">
+                <a href="#">Hà Nội về đêm: Ánh đèn, huyền thoại và những điều chưa kể</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/Kientrucphap.jpg" alt="kiến trúc pháp">
+            <div class="post-content">
+                <a href="#">Kiến trúc Pháp cổ tại Hà Nội: Dấu ấn thời gian trên từng viên gạch</a>
+            </div>
+        </div>
+        </div>
 
-<div class="ad"></div>
+            <div class="related-posts">
+        <h3 class="sidebar-title">
+            <span class="sidebar-icon"></span> TIN MỚI NHẤT
+        </h3>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new1.jpg" alt="Lễ hội lớn lên cùng truyền thống">
+            <div class="post-content">
+                <a href="https://ticketgo.vn/blog/trien-lam-quoc-te-nganh-cong-nghiep-che-bien-go-vietnamwood-2025">Triển lãm quốc tế ngành công nghiệp chế biến gỗ - VietnamWood 2025</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new2.jpg" alt="Vở diễn sân khấu đa ngành">
+            <div class="post-content">
+                <a href="#">GARAGESALE x WORKSHOP: "CHƠI CHUNG: AFTER HOUR" VOL.1</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new3.jpg" alt="Lễ hội bia thủ công">
+            <div class="post-content">
+                <a href="#">Tử vi tuần mới 12 cung hoàng đạo tuần từ 26/05 đến 01/06/2025</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new4.png" alt="Lễ hội du lịch Hà Nội">
+            <div class="post-content">
+                <a href="#">THÔNG BÁO MỞ ĐƠN ĐĂNG KÝ THAM GIA TALKSHOW "INTERN - NOT A CONCERN"</a>
+            </div>
+        </div>
+        </div>
+</div>
+    </div>
+<!--</div>-->
+</div>
 </main>
 
 <!-- Footer Section -->
