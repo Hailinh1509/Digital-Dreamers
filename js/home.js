@@ -1,30 +1,3 @@
-// Intro
-document.addEventListener("DOMContentLoaded", function () {
-  const intro = document.getElementById("videoIntro");
-  const main = document.getElementById("mainContent");
-  const video = document.getElementById("introVideo");
-
-  const introPlayed = localStorage.getItem("introPlayed");
-
-  if (introPlayed === "true") {
-    // Nếu đã xem → chỉ hiển thị trang chính
-    main.style.display = "block";
-  } else {
-    // Nếu chưa xem → hiển thị intro
-    intro.style.display = "block";
-
-    setTimeout(() => {
-      video.style.opacity = 0;
-    }, 2000);
-
-    setTimeout(() => {
-      intro.style.display = "none";
-      main.style.display = "block";
-      localStorage.setItem("introPlayed", "true");
-    }, 3200);
-  }
-});
-
 // Hiện lên khi cuộn đến và ẩn khi cuộn xuống
 document.addEventListener("DOMContentLoaded", function () {
   const info = document.querySelector(".image-info");
