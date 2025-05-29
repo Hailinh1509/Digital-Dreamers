@@ -135,12 +135,97 @@ main{
     
     text-decoration: none;
 }
+ /*#progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background-color: #dc3545;
+      width: 0%;
+      z-index: 10000;
+      transition: width 0.1s ease-out;
+    }*/
+    #progressWrapper {
+      display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #eee;
+  z-index: 9999;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background-color: #4caf50;
+      position: relative;
+    }
+
+    #progressIcon {
+      position: absolute;
+      top: -4px; /* Canh icon cao hơn thanh 1 chút */
+      left: 0;
+      width: 20px;
+      height: 20px;
+      transition: left 0.05s linear;
+    }
+/* ====================== MOBILE (max-width: 768px) ====================== */
+/* MOBILE */
 @media (max-width: 768px) {
-  .main {
+   .overlay-text {
+    font-size: 36px;
+    top: 60%;
+  }
+  .row {
+    display: flex;
     flex-direction: column;
+  }
+  .blog-sidebar {
+    order: 2;
+  }
+  .content {
+    order: 1;
+  }
+}
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .related-posts .post-item a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Số dòng tối đa */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+  line-height: 1.4em;
+  max-height: 2.8em; /* 1.4 * 2 */
+}
+}
+
+@media (min-width: 1025px) {
+  .content {
+    padding: 30px;
+  }
+  .content h2,
+  .content h3 {
+    font-size: 1.6em;
+  }
+  .related-posts .post-item img {
+    width: 80px;
+    height: 60px;
+  }
+  .sidebar-content {
+    padding: 15px;
   }
 }
   </style>
+  
 </head>
 <body>
   <!-- Welcome Section -->
@@ -249,8 +334,20 @@ main{
     <img src="../images/city/HaNoi.jpg" alt="ảnh nền">
     <div class="overlay-text">Những di tích lịch sử biểu tượng của Hà Nội</div>
 </div>
-<!--nội dung blog-->
+<!--nội dung blog
+<div id="progressContainer">
+  <div id="progressBarFill"></div>
+  <img src="../images/LOGO_title.png" id="progressIcon" alt="icon">
+</div>-->
+
+
 <main>
+<div id="progressWrapper">
+  <div id="progressBar">
+    <img src="../images/LOGO_title.png" id="progressIcon" alt="icon" />
+  </div>
+</div>
+
   <div class="row">
 <!--<div class="content">-->
   <div class="col-12 col-md-9 content" style="padding-top:10px;">
@@ -347,7 +444,7 @@ Việc thăm lăng không chỉ là một hoạt động du lịch mà còn là 
 <p>Công trình được thiết kế bởi kiến trúc sư người Pháp, Bourard, và mang đậm phong cách kiến trúc Gothic của châu Âu, 
     với các yếu tố như mái vòm nhọn, cửa sổ hình vòm và các trụ cột cao lớn. Đây là nhà thờ đầu tiên được xây dựng tại Hà Nội
      và là nơi hành lễ của cộng đồng Công giáo.</p>
-<img src="../images/blog/HoaLo.jpg" alt="ảnh nhà thờ lớn">
+<img src="../images/blog/NhaThoLon.jpg" alt="ảnh nhà thờ lớn">
 <p>Nhà thờ Lớn Hà Nội không chỉ là trung tâm tôn giáo của cộng đồng Công giáo mà còn là một biểu tượng văn hóa quan trọng của Hà Nội. 
     Nhà thờ thường xuyên tổ chức các lễ nghi tôn giáo, bao gồm các buổi lễ Thánh lễ, các nghi thức đặc biệt và các sự kiện cộng đồng.
 Ngoài ra, nhà thờ cũng là một điểm đến du lịch hấp dẫn, thu hút nhiều du khách trong và ngoài nước. Với vẻ đẹp kiến trúc ấn tượng và không gian yên tĩnh, 
@@ -483,5 +580,39 @@ nhà thờ là nơi lý tưởng để tìm hiểu về lịch sử và văn hó
   <i class="fas fa-home"></i>
 </button>
  <script src="../js/learn.js"></script>
+ <script>
+  window.addEventListener('scroll', () => {
+    const progressWrapper = document.getElementById('progressWrapper');
+    const progressBar = document.getElementById('progressBar');
+    const progressIcon = document.getElementById('progressIcon');
+    const header = document.querySelector('.main-header');
+    const wrapperWidth = progressWrapper.offsetWidth;
+
+    const headerRect = header.getBoundingClientRect();
+
+    // Chỉ hiện thanh nếu header đã hoàn toàn cuộn khỏi màn hình
+    const headerEnd = header.offsetTop + header.offsetHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (headerRect.bottom <= 0) {
+      progressWrapper.style.display = 'block';
+    } else {
+      progressWrapper.style.display = 'none';
+    }
+
+    // Tính lại tiến độ bắt đầu từ sau header
+    const contentHeight = document.documentElement.scrollHeight - headerEnd - window.innerHeight;
+    const scrolled = Math.max(0, scrollTop - headerEnd) / contentHeight * 100;
+
+    // Giới hạn từ 0 → 100%
+    const progressPercent = Math.min(100, Math.max(0, scrolled));
+
+    progressBar.style.width = progressPercent + '%';
+    const iconOffset = (wrapperWidth - progressIcon.offsetWidth) * (progressPercent / 100);
+    progressIcon.style.left = iconOffset + 'px';
+  });
+</script>
+
+
 </body>    
 </html>
