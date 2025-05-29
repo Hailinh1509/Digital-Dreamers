@@ -92,7 +92,7 @@
 #progressWrapper {
   display: none;
   position: fixed;
-  top: 2px;
+  top: 0.5px;
   left: 0;
   width: 100%;
   height: 8px;
@@ -111,8 +111,8 @@
   position: absolute;
   top: -4px;
   left: 0;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   transition: left 0.05s linear;
 }
 </style>
@@ -430,27 +430,37 @@ Nhân dịp kỷ niệm 50 năm ngày Thống nhất đất nước (30/4) và Q
 
 
 <script>
-  const progressWrapper = document.getElementById('progressWrapper');
-  const progressBar = document.getElementById('progressBar');
-  const progressIcon = document.getElementById('progressIcon');
-
   window.addEventListener('scroll', () => {
-    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (scrollTop / scrollHeight) * 100;
+    const progressWrapper = document.getElementById('progressWrapper');
+    const progressBar = document.getElementById('progressBar');
+    const progressIcon = document.getElementById('progressIcon');
+    const header = document.querySelector('.main-header');
+    const wrapperWidth = progressWrapper.offsetWidth;
 
-    if (scrollTop > 200) {
+    const headerRect = header.getBoundingClientRect();
+
+    // Chỉ hiện thanh nếu header đã hoàn toàn cuộn khỏi màn hình
+    const headerEnd = header.offsetTop + header.offsetHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (headerRect.bottom <= 0) {
       progressWrapper.style.display = 'block';
     } else {
       progressWrapper.style.display = 'none';
     }
 
-    progressBar.style.width = scrolled + '%';
+    // Tính lại tiến độ bắt đầu từ sau header
+    const contentHeight = document.documentElement.scrollHeight - headerEnd - window.innerHeight;
+    const scrolled = Math.max(0, scrollTop - headerEnd) / contentHeight * 100;
 
-    const wrapperWidth = progressWrapper.offsetWidth;
-    const iconOffset = (wrapperWidth - progressIcon.offsetWidth) * (scrolled / 100);
+    // Giới hạn từ 0 → 100%
+    const progressPercent = Math.min(100, Math.max(0, scrolled));
+
+    progressBar.style.width = progressPercent + '%';
+    const iconOffset = (wrapperWidth - progressIcon.offsetWidth) * (progressPercent / 100);
     progressIcon.style.left = iconOffset + 'px';
   });
 </script>
+
 </body>    
 </html>
