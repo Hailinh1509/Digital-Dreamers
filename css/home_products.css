@@ -159,8 +159,9 @@
     margin-left: 5px;
   }
   .view-more-header:hover {
-    background-color: #149ab7;   
-    color: #0056b3;
+    background-color: #8ed3e3;   
+    color: #022915;
+    text-decoration: none;
   }
 
 /* Hiện ra khi tải lại trang */
