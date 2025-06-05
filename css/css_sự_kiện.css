@@ -120,6 +120,19 @@
     object-fit: contain;
   }
 }
+/* Khi màn hình dưới 992px: 2 cột */
+@media (max-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Khi màn hình dưới 576px: 1 cột */
+@media (max-width: 480px) {
+  .events-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 .event-card {
     background-color: #fff;
