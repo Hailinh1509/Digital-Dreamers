@@ -45,11 +45,13 @@ video {
 
 /* Liệt kê thành phố */
     .urban {
+      padding: 0 20px;
+      margin: 0 auto;
+      max-width: 100%;
+      box-sizing: border-box;
       text-align: center;
-      width: 100%;
-      padding: 10px;
-      margin: 0 20px;
     }
+
 
     .urban h1 {
       color: #aa8800;
@@ -123,14 +125,15 @@ video {
     top: 35%;
     gap: 10px;
   }
+  
   .city-container {
     flex-direction: column;
     align-items: center;
   }
 
   .city-card {
-    width: 90%;
-    height: 300px;
+    width: 80vw;
+    height: 50vw; 
   }
 
 }
