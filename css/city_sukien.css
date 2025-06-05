@@ -6,7 +6,20 @@ a {
 main {
   padding: 20px 50px; /* Thêm padding cho phần main */
 }
-
+/*chu noi*/
+.overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 72px;
+      font-family: 'Dancing Script', cursive;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+      pointer-events: none;
+    }
 .intro {
   background-color: #f8f8f8; /* Màu nền cho phần giới thiệu */
   padding: 20px;
@@ -172,4 +185,43 @@ main {
 .pagination li > button:disabled {
   pointer-events: none;
   opacity: 0.9;
+}
+@media (max-width: 576px) {
+main{
+padding:20px;
+}
+.featured-events .event-list{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+  #recommended-events .event-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 thẻ trên dòng */
+  }
+  .event-card {
+    width: 100%;
+    margin-bottom: 10px;
+  box-sizing: border-box;
+  }
+
+  .event-details h3 {
+    font-size: 16px;
+    line-height: 1.3em;
+    max-height: 2.6em; /* Giới hạn tối đa 2 dòng */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+  }
+
+  .event-price, .event-date {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
+  }
+
 }
