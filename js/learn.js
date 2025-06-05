@@ -1,50 +1,29 @@
-// Hiện menu
+//Ẩn/hiện dropdown menu
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const mainNav = document.querySelector(".main-nav");
 
   hamburger.addEventListener("click", (e) => {
-    e.stopPropagation(); // Ngăn không cho sự kiện lan ra ngoài
+    e.stopPropagation();
     mainNav.classList.toggle("active");
   });
 
-  // Ngăn click trong menu làm ẩn menu
   mainNav.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
-  // Click ngoài menu -> ẩn menu
   document.addEventListener("click", () => {
     mainNav.classList.remove("active");
   });
 });
 
-// Hiện dropdown
-document.addEventListener('DOMContentLoaded', function () {
-  const arrowBtn = document.querySelector('.arrow-btn');
-  const dropdownContent = document.getElementById('cityMenu');
-
-  arrowBtn.addEventListener('click', function (e) {
-    e.preventDefault(); // Ngăn chặn reload nếu là trong thẻ form/link
-    dropdownContent.classList.toggle('show');
-  });
-
-  
-// Đăng xuất
+// Hiện dropdown đăng nhập/xuất
 function confirmLogout() {
     const confirmResult = confirm("Bạn chắc chắn muốn đăng xuất không?");
     if (confirmResult) {
         window.location.href = "index.html";
     }
 }
-
-  // Ẩn dropdown nếu click ngoài
-  document.addEventListener('click', function (e) {
-    if (!arrowBtn.contains(e.target) && !dropdownContent.contains(e.target)) {
-      dropdownContent.classList.remove('show');
-    }
-  });
-});
 
 // Email Footer
 const emailInput = document.getElementById("emailInput");

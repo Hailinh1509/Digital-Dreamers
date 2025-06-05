@@ -155,19 +155,16 @@ nav a:hover {
   width: max-content;
 }
 
-/* Khi có class show thì mới hiển thị */
-.dropdown-content.show {
-  display: flex;
-}
-
-
 .dropdown-content strong {
   color: #a87b00;
   margin-bottom: 5px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: flex;
+/* Chỉ áp dụng hover ở màn hình lớn (desktop) */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
 }
 
 .dropdown-region {
@@ -462,12 +459,7 @@ nav a:hover {
   .dropdown {
     padding: 5px;
   }
-  .dropdown-content {
-    transform: translateX(-350px); 
-    top: 35px;
-    right: 0;
-    max-width: 100vw;
-  }
+
 
   .dropdown-region {
     min-width: unset;
