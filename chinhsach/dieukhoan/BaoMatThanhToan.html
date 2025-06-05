@@ -12,10 +12,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <style>
     .pdf-container {
-      width: 95%;
+      width: 100%;
+      max-width: 100%;
       height: 100vh;
       border: none;
-      margin: 10px 30px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+    }
+    @media (max-width: 768px) {
+      .pdf-container {
+        height: 90vh;
+        padding: 8px;
+      }
     }
     </style>
 </head>
