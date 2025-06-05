@@ -75,17 +75,26 @@
 
 
 .banner-left {
-    width: 65%;
-    position: relative;
-    overflow: hidden;
+  width: 65%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
 .banner-image {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-left: 2px dashed #666;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-left: none;
+  border: none;
+  border-radius: 0;
 }
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -95,15 +104,21 @@
     .banner-right, .banner-left{
         width: 100%;
     }
-    .banner-left {
-        padding: 20px;
-    }
+  .banner-left {
+    width: 100%;
+    padding: 0;
+  }
     .event-title {
         font-size: 1.3em;
     }
     .price {
         font-size: 1.5em;
     }
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .event-card {
