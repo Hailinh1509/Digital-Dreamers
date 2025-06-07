@@ -171,7 +171,6 @@
       </div>
     </div>
   </div>
-
   <div class="dropdown">
     <a href="../city_sukien/sukien.html" class="city-link">SỰ KIỆN</a>
    
@@ -184,7 +183,7 @@
       </div> 
     </div>
   </div>
-  <a href="#">ĐẶT VÉ</a>
+  <a href="../chinhsach/dieukhoan/HuongDanDatVe.html">ĐẶT VÉ</a>
   <a href="../TrangLienHe.html">LIÊN HỆ</a>
 </nav>
 
@@ -540,7 +539,7 @@ kiện<br>
   <button class="btn btn-secondary" onclick="hidePopup()">Close</button>
 </div>
 
-<!-- Popup Form Thành công sau 15 giây -->
+<!-- Popup Form Thành công sau 10 giây -->
         <div id="finalSuccess" class="success-popup" style="background-color: #ede5d0;">
             <span class="close-btn" onclick="hidePopup()">X</span>
             <h3 style="display: block; margin: 0 auto;"><em>BẠN ĐÃ THANH TOÁN THÀNH CÔNG!</em></h3>
@@ -662,18 +661,35 @@ function toggleAll() {
           document.getElementById('bookingForm')?.reset();
       }
 
-      function processPayment() {
-            const form = document.getElementById('bookingForm');
-            const emailInput = document.getElementById('buyEmail');
-            const email = emailInput.value.trim();
-            if (!form.checkValidity()) {
-                alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
+      function processPayment() {           
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const buyEmail = document.getElementById('buyEmail').value.trim();
+            if (fullName === '') {
+                alert('Họ và tên không được để trống');
                 return;
             }
-            if (!isValidEmail(email)) {
+            if (phone === '') {
+                alert('Số điện thoại không được để trống');
+                return;
+            }
+            if (buyEmail === '') {
+                alert('Email không được để trống');
+                return;
+            }
+            if (!isValidEmail(buyEmail)) {
                 alert('Email không đúng định dạng');
                 return;
             }
+            if (!document.querySelector('input[name="ticketType"]:checked')) {
+                alert('Vui lòng chọn loại vé');
+                return;
+            }
+            if (!document.querySelector('input[name="paymentMethod"]:checked')) {
+                alert('Vui lòng chọn phương thức thanh toán');
+                return;
+            }
+
                 const ticketType = document.querySelector('input[name="ticketType"]:checked').value;
                 const orderAmount = ticketType === 'regular' ? '755.000 đ' : '1.081.920 đ';
                 document.getElementById('orderAmount').textContent = orderAmount;

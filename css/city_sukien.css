@@ -4,7 +4,7 @@ a {
 }
 /* main */
 main {
-  padding: 20px 50px; /* Thêm padding cho phần main */
+  padding: 20px 40px; 
 }
 /*chu noi*/
 .overlay-text {
@@ -56,7 +56,7 @@ main {
   position: relative;
   min-width: 50%;
   box-sizing: border-box;
-  padding: 0 10px;
+  padding: 0 5px;
 }
 
 .slide img {
@@ -101,11 +101,11 @@ main {
 .prev { left: 10px;}
 .next { right: 10px; }
 /*danh cho bạn*/
-.event section h2 {
+/*.event section h2 {
   color: #076bb8;
   margin-bottom: 20px;
-  text-align: left; /* Căn trái tiêu đề section */
-}
+  text-align: left;  Căn trái tiêu đề section 
+}*/
 .event-list {
   gap: 15px;
   display: grid;

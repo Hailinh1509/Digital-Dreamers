@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE</title>
-     <link rel="icon" href="../images/LOGO_title.png" type="image/x-icon">
- <link rel="stylesheet" href="../css/css_sự_kiện.css">
+    <link rel="icon" href="../images/LOGO_title.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/css_sự_kiện.css">
     <link rel="stylesheet" href="../css/footer.css">
-  <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/home.css">
   
 <!--Hiệu ứng kí hiệu thời gian, địa điểm,... Chỗ banner, sự kiện liên quan,...-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
@@ -186,7 +186,7 @@
       </div> 
     </div>
   </div>
-  <a href="#">ĐẶT VÉ</a>
+  <a href="../chinhsach/dieukhoan/HuongDanDatVe.html">ĐẶT VÉ</a>
   <a href="../TrangLienHe.html">LIÊN HỆ</a>
 </nav>
 
@@ -511,7 +511,7 @@
       </div>
       <div class="mb-3">
           <label for="email" class="form-label"><em>Email</em> <span style="color:red;">*</span></label>
-          <input type="email" class="form-control" id="email" required>
+          <input type="email" class="form-control" id="buyEmail" required>
       </div>
       <div class="mb-3">
           <label for="note" class="form-label"><em>Ghi chú</em></label>
@@ -523,12 +523,12 @@
       <div class="mb-3">
           <label><em>Địa điểm:</em> Toà CDC, 25 Lê Đại Hành, Hai Bà Trưng, Hà Nội, Phường Lê Đại Hành, Quận Hai Bà Trưng, Thành Phố Hà Nội</label>
       </div>
-      <div>
+      <div class="mb-3">
           <label><em>Chọn giờ:</em></label><br>
           <input type="radio" name="timeSlot" value="09:00 - 10:30" required> 09:00 - 10:30<br>
           <input type="radio" name="timeSlot" value="14:30 - 16:00"> 14:30 - 16:00
       </div>
-      <div>
+      <div class="mb-3">
           <label><em>Loại vé:</em></label><br>
           <input type="radio" name="ticketType" value="regular" required> Vé đơn: 315.000 đ<br>
           <input type="radio" name="ticketType" value="combo2"> Combo 2 vé: 599.000 đ<br>
@@ -548,22 +548,22 @@
 <!-- Form thành công -->
 <div id="paymentSuccess" class="popup" style="background-color: #ede5d0;">
   <span class="close-btn" onclick="hidePopup()">X</span>
-  <h3>Thực hiện thanh toán</h3>
+  <h3>THỰC HIỆN THANH TOÁN</h3>
   <p>Thông tin về vé sẽ được gửi qua Email của bạn</p>
   <p>Quét mã qua ứng dụng Ngân hàng/ Ví điện tử</p>
   <img src="../images/1.jpg" alt="QR Code" class="qr-code" id="qrCode" style="display: block; margin: 0 auto; width: 200px; height: 200px;"> <br> 
   <p><em>Thông tin đơn hàng:</em> Giá trị đơn hàng là <span id="orderAmount"></span></p>
   <button class="btn btn-secondary" onclick="hidePopup()">Close</button>
 </div>
-<div id="overlay" class="overlay" onclick="hidePopup()"></div>
-</div>
 
-<!-- Popup Form Thành công sau 15 giây -->
+
+<!-- Popup Form Thành công sau 10 giây -->
         <div id="finalSuccess" class="success-popup" style="background-color: #ede5d0;">
             <span class="close-btn" onclick="hidePopup()">X</span>
             <h3 style="display: block; margin: 0 auto;"><em>BẠN ĐÃ THANH TOÁN THÀNH CÔNG!</em></h3>
         </div>
-
+<div id="overlay" class="overlay" onclick="hidePopup()"></div>
+</div>
 <!-- Footer Section -->
 <footer class="footer">
   <div class="footer-container">
@@ -659,20 +659,18 @@ function toggleAll() {
 
     
     <script>
-      function showPopup(formId, defaultTime = '09:00 - 10:30') {
+      function showPopup(formId) {
           document.getElementById('overlay').style.display = 'block';
           document.getElementById('ticketForm').style.display = 'none';
           document.getElementById('paymentSuccess').style.display = 'none';
           document.getElementById(formId).style.display = 'block';
-      }
-
-      if (formId === 'ticketForm') {
-                document.querySelector('input[name="timeSlot"][value="' + defaultTime + '"]').checked = true;
-            } else if (formId === 'paymentSuccess') {
-                const ticketType = document.querySelector('input[name="ticketType"]:checked')?.value || '315000';
-                const orderAmount = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(ticketType);
-                document.getElementById('orderAmount').textContent = orderAmount;
-            }
+      
+          if (formId === 'paymentSuccess') {           
+              const ticketType = document.querySelector('input[name="ticketType"]:checked')?.value || 'regular';
+              const orderAmount = ticketType === 'regular' ? '315.000 đ' : ticketType === 'combo2' ? '599.000 đ' : '850.000 đ';
+              document.getElementById('orderAmount').textContent = orderAmount;
+      } 
+    }
 
       function hidePopup() {
           document.getElementById('overlay').style.display = 'none';
@@ -683,22 +681,55 @@ function toggleAll() {
       }
 
       function processPayment() {
-            const form = document.getElementById('bookingForm');
-            if (form.checkValidity()) {
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const buyEmail = document.getElementById('buyEmail').value.trim();
+            const timeSlot = document.querySelector('input[name="timeSlot"]:checked')?.value; 
+            if (fullName === '') {
+                alert('Họ và tên không được để trống');
+                return;
+            }
+            if (phone === '') {
+                alert('Số điện thoại không được để trống');
+                return;
+            }
+            if (buyEmail === '') {
+                alert('Email không được để trống');
+                return;
+            }
+            if (!isValidEmail(buyEmail)) {
+                alert('Email không đúng định dạng');
+                return;
+            }
+            if (!timeSlot) {
+                alert('Vui lòng chọn thời gian');
+                return;
+            }
+            if (!document.querySelector('input[name="ticketType"]:checked')) {
+                alert('Vui lòng chọn loại vé');
+                return;
+            }
+            if (!document.querySelector('input[name="paymentMethod"]:checked')) {
+                alert('Vui lòng chọn phương thức thanh toán');
+                return;
+            }  
             const ticketType = document.querySelector('input[name="ticketType"]:checked').value;
-            const orderAmount = ticketType === 'regular' ? '315.000 đ' : ticketType === 'combo2' ? '599.000 đ' : '850.000 đ';                document.getElementById('orderAmount').textContent = orderAmount;
+            const orderAmount = ticketType === 'regular' ? '315.000 đ' : ticketType === 'combo2' ? '599.000 đ' : '850.000 đ';             
             document.getElementById('orderAmount').textContent = orderAmount;
             document.getElementById('ticketForm').style.display = 'none';
-            document.getElementById('paymentSuccess').style.display = 'block'; 
+            showPopup('paymentSuccess');
+            //document.getElementById('paymentSuccess').style.display = 'block'; 
 
                 setTimeout(() => {
                   document.getElementById('paymentSuccess').style.display = 'none';  
                   document.getElementById('finalSuccess').style.display = 'block';
                 }, 10000);
-            } else {
-                alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
-            }
-        }
+            
+              }
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }      
 
         function exitForm() {
             document.getElementById('paymentSuccess').style.display = 'none';
