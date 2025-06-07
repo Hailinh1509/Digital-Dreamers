@@ -48,6 +48,7 @@ function checkEmail() {
 
   if (email === "") {
     errorMsg.style.display = "block";
+    errorMsg.textContent = "Vui lòng nhập Email";
   } else if (!emailRegex.test(email)) {
     errorMsg.textContent = "Email không đúng định dạng";
     errorMsg.style.display = "block";
