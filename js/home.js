@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const index = parseInt(circle.dataset.index);
       showGallery(index);
       clearInterval(intervalId);
-      intervalId = setInterval(nextGallery, 2000);
+      intervalId = setInterval(nextGallery, 9000);
     });
   });
 

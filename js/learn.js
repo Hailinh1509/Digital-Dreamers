@@ -44,8 +44,12 @@ const errorMsg = document.getElementById("errorMsg");
 
 function checkEmail() {
   const email = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (email === "") {
+    errorMsg.style.display = "block";
+  } else if (!emailRegex.test(email)) {
+    errorMsg.textContent = "Email không đúng định dạng";
     errorMsg.style.display = "block";
   } else {
     errorMsg.style.display = "none";
@@ -63,7 +67,6 @@ function checkEmail() {
 
   emailInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
-      e.preventDefault(); 
       checkEmail();      
     }
   });
