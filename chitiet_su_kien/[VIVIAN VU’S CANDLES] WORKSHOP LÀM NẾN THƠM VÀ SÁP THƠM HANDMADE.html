@@ -684,9 +684,7 @@ function toggleAll() {
             const fullName = document.getElementById('fullName').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const buyEmail = document.getElementById('buyEmail').value.trim();
-            const timeSlot = document.querySelector('input[name="timeSlot"]:checked')?.value;
-            const ticketType = document.querySelector('input[name="ticketType"]:checked').value;
-            const orderAmount = ticketType === 'regular' ? '315.000 đ' : ticketType === 'combo2' ? '599.000 đ' : '850.000 đ';  
+            const timeSlot = document.querySelector('input[name="timeSlot"]:checked')?.value; 
             if (fullName === '') {
                 alert('Họ và tên không được để trống');
                 return;
@@ -714,7 +712,9 @@ function toggleAll() {
             if (!document.querySelector('input[name="paymentMethod"]:checked')) {
                 alert('Vui lòng chọn phương thức thanh toán');
                 return;
-            }              
+            }  
+            const ticketType = document.querySelector('input[name="ticketType"]:checked').value;
+            const orderAmount = ticketType === 'regular' ? '315.000 đ' : ticketType === 'combo2' ? '599.000 đ' : '850.000 đ';             
             document.getElementById('orderAmount').textContent = orderAmount;
             document.getElementById('ticketForm').style.display = 'none';
             showPopup('paymentSuccess');
