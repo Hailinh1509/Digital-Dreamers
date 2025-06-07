@@ -209,7 +209,7 @@
     -webkit-box-orient: vertical;
   }
 
-  .event-details h3 :hover{
+  .event-details h3:hover{
     color: #0056b3;
   }
   
